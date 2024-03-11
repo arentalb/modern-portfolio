@@ -13,8 +13,8 @@ To enable smooth navigation between different sections of the portfolio, React R
 ### 3. Tailwind CSS
 Tailwind CSS is employed for styling the portfolio. It is a utility-first CSS framework that provides low-level utility classes to build designs directly in your markup. This allows for a more efficient and flexible styling process.
 
-### 4. Shadow UI (ShadcnUi)
-Shadow UI is a custom UI library (ShadcnUi) designed to enhance the visual aesthetics of the portfolio. It provides a set of pre-designed components and styles to create a modern and appealing user interface.
+### 4. ShadcnUi
+ShadcnUi is a custom UI library designed to enhance the visual aesthetics of the portfolio. It provides a set of pre-designed components and styles to create a modern and appealing user interface.
 
 ### 5. AceternityUI
 AceternityUI is integrated to add additional UI components and features to the portfolio. It enhances the user experience with its collection of customizable components.
