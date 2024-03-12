@@ -22,6 +22,8 @@ module.exports = {
         mono: ["Cascadia Code", "monospace"],
       },
       colors: {
+        "white-primary": "#fff",
+        "gray-primary": "#A1A1AA",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

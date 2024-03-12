@@ -84,3 +84,8 @@
         @apply bg-background text-foreground;
     }
 }
+
+body {
+    background-color: black;
+    color: white;
+}

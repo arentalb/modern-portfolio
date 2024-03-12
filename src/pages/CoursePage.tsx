@@ -1,3 +1,10 @@
+import { Header } from "@/components/layout/Header.tsx";
+
 export function CoursePage() {
-  return <>CoursePage</>;
+  return (
+    <>
+      <Header />
+      CoursePage
+    </>
+  );
 }
