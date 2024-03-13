@@ -67,7 +67,7 @@ function Project({ project }: ProjectComponentProps) {
   return (
     <div
       className={
-        "flex flex-col items-start justify-between border border-white p-2 rounded-3xl px-6 pt-10 pb-6 w-full sm:w-1/2 md:w-1/3"
+        "flex flex-col items-start justify-between border border-white p-2 rounded-3xl px-6 pt-10 pb-6 w-full sm:w-1/2 md:w-1/3 mb-24"
       }
     >
       <div>

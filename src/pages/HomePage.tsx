@@ -4,6 +4,7 @@ import { SkillsSection } from "@/components/layout/home/SkillsSection.tsx";
 import { BrightLine } from "@/components/common/BrightLine.tsx";
 import { BrightCurvedLine } from "@/components/common/BrightCurvedLine.tsx";
 import { ProjectSection } from "@/components/layout/home/ProjectSection.tsx";
+import { ExperienceSection } from "@/components/layout/home/ExperienceSection.tsx";
 
 export function HomePage() {
   return (
@@ -15,6 +16,7 @@ export function HomePage() {
       <SkillsSection />
       <BrightCurvedLine direction={"up"} />
       <ProjectSection />
+      <ExperienceSection />
       <BrightCurvedLine direction={"down"} />
     </>
   );
