@@ -20,6 +20,7 @@ module.exports = {
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
         mono: ["Cascadia Code", "monospace"],
+        shadow: ["Shadows Into Light", "cursive"],
       },
       colors: {
         "white-primary": "#fff",
