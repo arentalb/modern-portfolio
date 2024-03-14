@@ -8,6 +8,7 @@ import { ExperienceSection } from "@/components/layout/home/ExperienceSection.ts
 import { CertificateSection } from "@/components/layout/home/CertificateSection.tsx";
 import { StatisticsSection } from "@/components/layout/home/StatisticsSection.tsx";
 import { CallToAction } from "@/components/layout/home/CallToAction.tsx";
+import { Footer } from "@/components/layout/Footer.tsx";
 
 export function HomePage() {
   return (
@@ -23,6 +24,7 @@ export function HomePage() {
       <CertificateSection />
       <StatisticsSection />
       <CallToAction />
+      <Footer />
     </>
   );
 }
