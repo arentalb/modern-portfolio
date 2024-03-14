@@ -1,6 +1,7 @@
 import { Button } from "@/components/common/ui/button.tsx";
 import { Link } from "react-router-dom";
 import { Spotlight } from "@/components/common/aceternity/SpotLight.tsx";
+import { ReactTyped } from "react-typed";
 
 export function CertificateSection() {
   return (
@@ -42,7 +43,13 @@ export function CertificateSection() {
             "bg-white text-black -rotate-6 text-2xl sm:text-4xl scale-110 text-center py-5 font-shadow italic font-bold"
           }
         >
-          Elevate Your Skills Beyond Paper
+          <ReactTyped
+            startDelay={50}
+            startWhenVisible
+            stopped
+            strings={["Elevate Your Skills Beyond Paper"]}
+            typeSpeed={50}
+          />
         </div>
       </section>
     </>
