@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+// import { calsans } from "@/fonts/calsans";
+import { TracingBeam } from "@/components/common/aceternity/TracingBeam.tsx";
 
 interface ExperienceProp {
   title: string;
@@ -39,7 +41,7 @@ const ExperienceData: ExperienceProp[] = [
 
 export function ExperienceSection() {
   return (
-    <section className=" px-5   py-12 md:max-w-[1400px] mx-auto">
+    <section className=" px-5   py-12 md:max-w-[1400px] mx-auto pb-32">
       <div className={"flex justify-center flex-col items-center mb-16"}>
         <h1 className={"text-4xl font-bold mb-6 text-center"}>
           From Projects to Progress
@@ -52,21 +54,20 @@ export function ExperienceSection() {
           Explore the dynamic chapters of my career
         </p>
       </div>
-      <div className={"flex gap-4"}>
-        <div className={"w-1 min-h-[600px] bg-white"}></div>
-        <Experiences />
-      </div>
+      <Experiences />
     </section>
   );
 }
 
 function Experiences() {
   return (
-    <div className={"flex gap-24 flex-col w-full"}>
-      {ExperienceData.map((item) => (
-        <Experience experience={item} />
-      ))}
-    </div>
+    <TracingBeam className="px-6">
+      <div className=" mx-auto antialiased pt-4 relative flex gap-24 flex-col w-full">
+        {ExperienceData.map((item) => (
+          <Experience experience={item} />
+        ))}
+      </div>
+    </TracingBeam>
   );
 }
 
@@ -78,7 +79,7 @@ function Experience({ experience }: ExperienceComponentProps) {
   return (
     <div
       className={
-        "border-2 border-white rounded-3xl  px-6 py-8 sm:px-16 sm:py-14   flex  justify-between "
+        "ml-4 border-2 border-white rounded-3xl  w-full px-6 py-8 sm:px-16 sm:py-14   flex  justify-between "
       }
     >
       <div>
@@ -96,7 +97,7 @@ function Experience({ experience }: ExperienceComponentProps) {
           {experience.description}
         </p>
       </div>
-      <div className={" min-w-10 max-w-10 flex  items-end sm:items-start"}>
+      <div className={" min-w-6 max-w-8  flex  items-end sm:items-start"}>
         <Link to={experience.link}>
           <img src="/icons/externalLink.svg" alt="" />
         </Link>
