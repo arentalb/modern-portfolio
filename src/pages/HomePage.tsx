@@ -7,6 +7,7 @@ import { ProjectSection } from "@/components/layout/home/ProjectSection.tsx";
 import { ExperienceSection } from "@/components/layout/home/ExperienceSection.tsx";
 import { CertificateSection } from "@/components/layout/home/CertificateSection.tsx";
 import { StatisticsSection } from "@/components/layout/home/StatisticsSection.tsx";
+import { CallToAction } from "@/components/layout/home/CallToAction.tsx";
 
 export function HomePage() {
   return (
@@ -21,6 +22,7 @@ export function HomePage() {
       <BrightCurvedLine direction={"down"} />
       <CertificateSection />
       <StatisticsSection />
+      <CallToAction />
     </>
   );
 }
