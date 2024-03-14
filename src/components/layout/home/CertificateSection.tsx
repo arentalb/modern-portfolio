@@ -1,24 +1,30 @@
 import { Button } from "@/components/common/ui/button.tsx";
 import { Link } from "react-router-dom";
+import { Spotlight } from "@/components/common/aceternity/SpotLight.tsx";
 
 export function CertificateSection() {
   return (
     <>
       <section className=" px-5  pt-36 pb-12 md:max-w-[1400px] mx-auto">
+        <Spotlight className={""} fill={"white"} />
         <div
           className={"flex justify-between  items-center flex-col sm:flex-row"}
         >
           <div className={"text-center sm:text-start"}>
-            <h1 className={"text-4xl font-bold mb-6"}>
+            <h1 className={"text-4xl font-bold mb-6 z-20"}>
               Showcasing my Achievements
             </h1>
-            <p className={"text-sm  text-gray-primary mb-14 sm:max-w-[500px] "}>
+            <p
+              className={
+                "text-sm  text-gray-primary mb-14 sm:max-w-[500px] z-20"
+              }
+            >
               Explore a collection of certifications that validate my skills and
               dedication to continuous learning. Each certificate represents a
               milestone in my professional journey.
             </p>
             <Link to={""}>
-              <Button>View All Certificates</Button>
+              <Button className={"z-20"}>View All Certificates</Button>
             </Link>
           </div>
           <div className={"max-w-[400px]"}>
