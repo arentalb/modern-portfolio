@@ -64,7 +64,7 @@ function Experiences() {
     <TracingBeam className="px-6">
       <div className=" mx-auto antialiased pt-4 relative flex gap-24 flex-col w-full">
         {ExperienceData.map((item) => (
-          <Experience experience={item} />
+          <Experience experience={item} key={item.title} />
         ))}
       </div>
     </TracingBeam>
