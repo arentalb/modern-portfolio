@@ -6,7 +6,7 @@ import { ReactTyped } from "react-typed";
 export function CertificateSection() {
   return (
     <>
-      <section className=" px-5  pt-36 pb-12 md:max-w-[1400px] mx-auto">
+      <section className=" px-5  pt-36 pb-12 md:max-w-[1400px] mx-auto ">
         <Spotlight className={""} fill={"white"} />
         <div
           className={"flex justify-between  items-center flex-col sm:flex-row"}
@@ -37,7 +37,7 @@ export function CertificateSection() {
           </div>
         </div>
       </section>
-      <section className={"relative  py-32 overflow-hidden"}>
+      <section className={"relative  overflow-hidden pt-32 pb-64"}>
         <div
           className={
             "bg-white text-black -rotate-6 text-2xl sm:text-4xl scale-110 text-center py-5 font-shadow italic font-bold"

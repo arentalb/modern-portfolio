@@ -22,6 +22,7 @@ export function HomePage() {
       <ExperienceSection />
       <BrightCurvedLine direction={"down"} />
       <CertificateSection />
+      <BrightLine />
       <StatisticsSection />
       <CallToAction />
       <Footer />

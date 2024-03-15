@@ -1,3 +1,5 @@
+import CountUp from "react-countup";
+
 interface StatisticProps {
   StatisticName: string;
   count: number;
@@ -28,9 +30,7 @@ export function StatisticsSection() {
   return (
     <section className=" px-5   py-32 md:max-w-[1400px] mx-auto  text-center ">
       <div className={"flex justify-center flex-col items-center mb-14"}>
-        <h1
-          className={"text-4xl font-bold mb-6 border-t-8 border-t-white pt-10"}
-        >
+        <h1 className={"text-4xl font-bold mb-6 pt-10"}>
           Insights and Achievements
         </h1>
         <p
@@ -68,7 +68,15 @@ interface StatisticComponentProps {
 function Statistic({ statistic }: StatisticComponentProps) {
   return (
     <div className={" rounded-3xl border-2 border-white p-4 "}>
-      <p className={"text-4xl font-bold mb-4"}> {statistic.count}+</p>
+      <p className={"text-4xl font-bold mb-4"}>
+        <CountUp
+          duration={6}
+          end={statistic.count}
+          scrollSpyOnce={true}
+          enableScrollSpy={true}
+        />
+        +
+      </p>
       <p className={"text-base"}> {statistic.StatisticName}</p>
     </div>
   );
