@@ -1,4 +1,5 @@
 import { BrightLine } from "@/components/common/BrightLine.tsx";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -16,9 +17,15 @@ export function Footer() {
         }
       >
         <div className={"flex gap-8 sm:gap-4 items-center"}>
-          <img src="/icons/github.svg" alt="" />
-          <img src="/icons/linkedin.svg" alt="" />
-          <img src="/icons/instagram.svg" alt="" />
+          <Link to={"https://github.com/arentalb"}>
+            <img src="/icons/github.svg" alt="" />
+          </Link>
+          <Link to={"https://www.linkedin.com/in/aren-talb-45253a1bb/"}>
+            <img src="/icons/linkedin.svg" alt="" />
+          </Link>
+          <Link to={"https://www.instagram.com/aren_talb/"}>
+            <img src="/icons/instagram.svg" alt="" />
+          </Link>
         </div>
         <div className={"text-center"}>
           <p className={"text-gray-primary text-xs font-bold mb-2"}>
@@ -27,7 +34,9 @@ export function Footer() {
           <p className={"font-bold text-2xl "}>Aren Talb </p>
         </div>
         <div className={"sm:flex justify-center items-center hidden"}>
-          <img src="/images/logo.svg" alt="" />
+          <Link to={"/"}>
+            <img src="/images/logo.svg" alt="" />
+          </Link>
         </div>
       </div>
     </footer>
