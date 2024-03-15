@@ -69,8 +69,8 @@ function NavItems() {
   return (
     <>
       <NavItem to="/article">Article</NavItem>
-      <NavItem to="/tutorial">Tutorial</NavItem>
-      <NavItem to="/course">Course</NavItem>
+      {/*<NavItem to="/tutorial">Tutorial</NavItem>*/}
+      {/*<NavItem to="/course">Course</NavItem>*/}
       <TerminalIcon />
     </>
   );
