@@ -1,10 +1,11 @@
 import { Header } from "@/components/layout/Header.tsx";
+import { ComingSoon } from "@/components/layout/ComingSoon.tsx";
 
 export function TutorialPage() {
   return (
     <>
       <Header />
-      TutorialPage
+      <ComingSoon text={"Coming soon"} />
     </>
   );
 }
