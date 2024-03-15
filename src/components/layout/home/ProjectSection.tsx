@@ -10,22 +10,28 @@ interface ProjectProp {
 
 const projectData: ProjectProp[] = [
   {
-    title: "Online Marketplace Platform",
+    title: "My Portfolio - React Project ",
     description:
-      "An e-commerce platform developed using React and Node.js, enabling users to browse, buy, and sell products securely. Integrated with payment gateways for seamless transactions.  ",
+      "Description: Discover my personal portfolio website, a showcase of my skills, experiences, and projects. Crafted with React and spiced up with animations using Framer Motion and React Spring. Enjoy smooth navigation with React Router and sleek styling with Tailwind CSS. TypeScript ensures code quality while Vite powers fast development. Each design element is meticulously created from scratch using Figma for a unique visual experience.",
+    link: "/",
+  },
+  {
+    title: "Shoply - E-commerce ",
+    description:
+      "Shoply is an Angular-based e-commerce practice project designed to help developers improve their skills in Angular development. It is not intended for production use and currently utilizes local arrays for data storage. The long-term plan involves integrating a backend using Spring Boot in Java to enhance functionality.",
     link: "https://github.com/arentalb/shoply-angular",
   },
   {
     title: "Collaborative Task Manager",
     description:
-      "Developed using Angular and Flask, this project focuses on efficient task management for teams. It includes features for creating, assigning, and tracking tasks, real-time collaboration, and integration with popular productivity tools.",
+      "Manage tasks with ease using the Angular Firebase Task Manager app. Features include user authentication, task management, user-specific task lists, and user profile viewing.",
     link: "https://github.com/arentalb/taskmanger-angular",
   },
   {
-    title: "Event Ticketing System",
+    title: "LaslesVPN - Angular Website",
     description:
-      "A full-stack application using React and Express that facilitates the creation, promotion, and sale of event tickets. It includes features such as seat selection, secure payment processing, and event analytics for organizers.",
-    link: "https://github.com/arentalb/Fintell-css",
+      "LaslesVPN is a website homepage built using Angular and custom CSS. Currently, it's a static representation without functional components. The project was generated with Angular CLI version 17.0.7, showcasing modern development practices.",
+    link: "https://github.com/arentalb/LaslesVPN-css",
   },
 ];
 
@@ -42,7 +48,9 @@ export function ProjectSection() {
           passion for innovation.
         </p>
         <Button className={"font-bold"}>
-          <Link to={"https://github.com/arentalb/"}>View All Projects</Link>
+          <Link to={"https://github.com/arentalb?tab=repositories"}>
+            View All Projects
+          </Link>
         </Button>
       </div>
       <MovingCards items={projectData} direction="right" speed="slow" />

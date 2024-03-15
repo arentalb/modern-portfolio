@@ -113,7 +113,9 @@ function Project({ project }: ProjectComponentProps) {
     >
       <div>
         <p className={"text-3xl font-bold mb-6"}> {project.title}</p>
-        <p className={"text-sm font-semibold mb-12"}>{project.description}</p>
+        <p className={"text-sm font-semibold mb-12 leading-5"}>
+          {project.description}
+        </p>
       </div>
       <div className={"flex w-full justify-end  "}>
         <Link to={project.link}>
