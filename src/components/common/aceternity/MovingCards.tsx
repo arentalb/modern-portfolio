@@ -112,9 +112,12 @@ function Project({ project }: ProjectComponentProps) {
       }
     >
       <div>
-        <p className={"text-3xl font-bold mb-6"}> {project.title}</p>
-        <p className={"text-sm font-semibold mb-12 leading-5"}>
-          {project.description}
+        <p className={"text-2xl sm:text-3xl font-bold mb-6"}>{project.title}</p>
+        <p className={"text-xs font-semibold mb-12 leading-5 block sm:hidden"}>
+          {textShortner(project.description, 20)}
+        </p>
+        <p className={"text-xs font-semibold mb-12 leading-5 hidden sm:block"}>
+          {textShortner(project.description, 40)}
         </p>
       </div>
       <div className={"flex w-full justify-end  "}>
@@ -124,4 +127,9 @@ function Project({ project }: ProjectComponentProps) {
       </div>
     </div>
   );
+}
+
+function textShortner(text: string, lenght: number) {
+  const shortenedText = text.split(" ").slice(0, lenght).join(" ");
+  return shortenedText + (text.split(" ").length > lenght ? " ..." : "");
 }
