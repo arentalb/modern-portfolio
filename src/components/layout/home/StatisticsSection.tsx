@@ -12,17 +12,21 @@ const StatisticData: StatisticProps[] = [
   },
   {
     StatisticName: "Articles Published",
-    count: 21,
+    count: 22,
   },
 
+  // {
+  //   StatisticName: "Tutorials Shared",
+  //   count: 46,
+  // },
   {
-    StatisticName: "Tutorials Shared",
-    count: 46,
+    StatisticName: "Skills Mastered",
+    count: 15,
   },
 
   {
     StatisticName: "Projects Completed",
-    count: 12,
+    count: 4,
   },
 ];
 

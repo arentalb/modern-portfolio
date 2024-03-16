@@ -20,14 +20,14 @@ const ExperienceData: ExperienceProp[] = [
     title: "Team Member - Bnchina & Bnchina Academy",
     date: "January 2024 - Present",
     description:
-      "As a team member at Bnchina & Bnchina Academy since January 2024, I have been part of an exciting journey to revolutionize responsible software development. At Bnchina, we ignite careers and encourage our team members to lead the way in transforming the industry. Our mission is to seamlessly bridge the gap left by uninspiring designs, ensuring that every interaction reflects innovation and user-centric excellence. Join us as we embark on this mission and shape the future of technology together.",
+      "As a team member at Bnchina & Bnchina Academy since January 2024, I have been part of an exciting journey to revolutionize responsible software development. At Bnchina, we ignite careers and encourage our team members to lead the way in transforming the industry. Our mission is to seamlessly bridge the gap left by uninspiring designs, ensuring that every interaction reflects innovation and user-centric excellence.",
     link: "https://bnchina.co/",
   },
   {
     title: "Independent Technology Practice",
     date: "January 2020 - Present",
     description:
-      "During my independent technology practice from 2020 to 2023, I engaged in diverse projects spanning software development, web design, consulting, and research. This period fostered autonomy, creativity, and continuous learning, allowing me to deliver tailored solutions while pushing the boundaries of innovation in technology.",
+      "During my independent technology practice from 2020 to now, I engaged in diverse projects spanning software development, web design, consulting, and research. This period fostered autonomy, creativity, and continuous learning, allowing me to deliver tailored solutions while pushing the boundaries of innovation in technology.",
     link: "https://github.com/arentalb",
   },
 ];
