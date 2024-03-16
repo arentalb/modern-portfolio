@@ -30,7 +30,8 @@ export const Terminal = () => {
             runCommand();
           }
         }}
-        className={` w-[95%] h-[95%] z-10 border-2 border-white font-mono text-base text-white bg-black absolute bottom-0 right-0 rounded-3xl p-4   resize-none scroll focus:outline-none`}
+        className={` w-[95%] h-[95%] z-10 border-2 border-white font-mono text-base text-white bg-black absolute bottom-0 right-0 rounded-3xl p-4   resize-none scroll focus:outline-none `}
+        style={{ overflowY: "hidden", scrollbarWidth: "none" }}
       ></textarea>
       <Button
         onClick={openHandler}
