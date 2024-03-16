@@ -24,7 +24,7 @@ export function CertificateSection() {
               dedication to continuous learning. Each certificate represents a
               milestone in my professional journey.
             </p>
-            <Link to={""}>
+            <Link to={"certificates"}>
               <Button className={"z-20"}>View All Certificates</Button>
             </Link>
           </div>
