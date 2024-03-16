@@ -15,7 +15,7 @@ const ExperienceData: ExperienceProp[] = [
     date: "March 2024 - Present",
     description:
       'As a Frontend Developer at Kitn for IT Solution, I had the opportunity to work on an exciting project called "Pweist." This project involved developing a multi-user system management application designed specifically for markets.',
-    link: "http://kitn.pewist.net/",
+    link: "https://kitn.net/",
   },
   {
     title: "Team Member - Bnchina & Bnchina Academy",
