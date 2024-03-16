@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 export function CallToAction() {
   const [form, setForm] = useForm("xeqyzylo");
-  const formRef = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   function callHandler() {
     window.location.href = `tel:07702174700`;
@@ -16,19 +16,26 @@ export function CallToAction() {
     window.location.href = `mailto:aren.talb00@gmail.com`;
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    const target = e.target as typeof e.target & {
+      email: { value: string };
+      message: { value: string };
+    };
+
     if (
-      e.target.email.value.trim() !== "" &&
-      e.target.message.value.trim() !== ""
+      target.email.value.trim() !== "" &&
+      target.message.value.trim() !== ""
     ) {
       setForm(e);
     }
   }
 
-  if (form.succeeded) {
-    formRef.current.reset();
+  if (form && form.succeeded) {
+    if (formRef.current) {
+      formRef.current.reset();
+    }
   }
   return (
     <section className=" px-5   py-32 md:max-w-[1400px] mx-auto relative">
