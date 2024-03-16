@@ -71,7 +71,16 @@ interface StatisticComponentProps {
 
 function Statistic({ statistic }: StatisticComponentProps) {
   return (
-    <div className={" rounded-3xl border-2 border-white p-4 "}>
+    <div className={" rounded-3xl border-2 border-white p-4 relative "}>
+      <div
+        className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px"
+        style={{
+          boxShadow: "0px 0px 20px 10px rgba(255, 255, 255, 0.2)",
+          backgroundImage:
+            "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 48%, rgba(255,255,255,0) 100%)",
+        }}
+      />
+
       <p className={"text-4xl font-bold mb-4"}>
         <CountUp
           duration={6}
@@ -81,7 +90,7 @@ function Statistic({ statistic }: StatisticComponentProps) {
         />
         +
       </p>
-      <p className={"text-base"}> {statistic.StatisticName}</p>
+      <p className={"text-base font-bold"}> {statistic.StatisticName}</p>
     </div>
   );
 }
