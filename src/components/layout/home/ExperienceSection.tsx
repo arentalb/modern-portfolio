@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-// import { calsans } from "@/fonts/calsans";
+import { Link } from "react-router-dom"; // import { calsans } from "@/fonts/calsans";
 import { TracingBeam } from "@/components/common/aceternity/TracingBeam.tsx";
 
 interface ExperienceProp {
@@ -11,30 +10,24 @@ interface ExperienceProp {
 
 const ExperienceData: ExperienceProp[] = [
   {
-    title: "Frontend Developer - Tech Innovations Ltd.",
+    title: "Frontend Developer - Kitn for IT Solution",
+    date: "March 2024 - Present",
+    description:
+      'As a Frontend Developer at Kitn for IT Solution, I had the opportunity to work on an exciting project called "Pweist." This project involved developing a multi-user system management application designed specifically for markets.',
+    link: "http://kitn.pewist.net/",
+  },
+  {
+    title: "Team Member - Bnchina & Bnchina Academy",
+    date: "January 2024 - Present",
+    description:
+      "As a team member at Bnchina & Bnchina Academy since January 2024, I have been part of an exciting journey to revolutionize responsible software development. At Bnchina, we ignite careers and encourage our team members to lead the way in transforming the industry. Our mission is to seamlessly bridge the gap left by uninspiring designs, ensuring that every interaction reflects innovation and user-centric excellence. Join us as we embark on this mission and shape the future of technology together.",
+    link: "https://bnchina.co/",
+  },
+  {
+    title: "Independent Technology Practice",
     date: "January 2020 - Present",
     description:
-      "Lead the development of responsive and user-friendly web interfaces.\n" +
-      "Implemented innovative solutions that improved overall user experience.\n" +
-      "Collaborated with cross-functional teams to deliver high-quality products.   ",
-    link: "https://github.com/arentalb",
-  },
-  {
-    title: "Full Stack Engineer - Innovate Tech Solutions",
-    date: "June 2018 - December 2021",
-    description:
-      "Developed end-to-end solutions for web applications, covering both frontend and backend development , \n" +
-      "Collaborated with product managers to translate business requirements into technical specifications ,\n" +
-      "Implemented RESTful APIs and integrated third-party services to enhance application functionality.\n",
-    link: "https://github.com/arentalb",
-  },
-  {
-    title: "UX/UI Designer - Creative Dynamics Agency",
-    date: "March 2017 - September 2019",
-    description:
-      "Designed intuitive and visually appealing user interfaces for various digital platforms , " +
-      "Conducted user research, created wireframes, and produced interactive prototypes to validate design concepts ," +
-      "Collaborated closely with developers to ensure seamless integration of design elements into the final product.",
+      "During my independent technology practice from 2020 to 2023, I engaged in diverse projects spanning software development, web design, consulting, and research. This period fostered autonomy, creativity, and continuous learning, allowing me to deliver tailored solutions while pushing the boundaries of innovation in technology.",
     link: "https://github.com/arentalb",
   },
 ];

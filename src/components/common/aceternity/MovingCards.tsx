@@ -116,7 +116,7 @@ function Project({ project }: ProjectComponentProps) {
         <p className={"text-xs font-semibold mb-12 leading-5 block sm:hidden"}>
           {textShortner(project.description, 20)}
         </p>
-        <p className={"text-xs font-semibold mb-12 leading-5 hidden sm:block"}>
+        <p className={"text-sm font-semibold mb-12 leading-6 hidden sm:block"}>
           {textShortner(project.description, 40)}
         </p>
       </div>
