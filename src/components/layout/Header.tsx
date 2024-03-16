@@ -1,5 +1,6 @@
 import { NavLink, To } from "react-router-dom";
 import { ReactNode, useState } from "react";
+import { Toast } from "@/components/common/Toast.tsx";
 
 interface NavItemProps {
   to: To;
@@ -77,9 +78,18 @@ function NavItems() {
 }
 
 function TerminalIcon() {
-  return <img src="/icons/termina.svg" alt="" onClick={terminalHandler} />;
-}
+  const [showToast, setShowToast] = useState(false);
 
-function terminalHandler() {
-  console.log("terminal");
+  return (
+    <>
+      {showToast ? (
+        <Toast toggleHandler={() => setShowToast(false)}>
+          Not Available at this time
+        </Toast>
+      ) : (
+        ""
+      )}
+      <img src="/icons/termina.svg" alt="" onClick={() => setShowToast(true)} />
+    </>
+  );
 }
