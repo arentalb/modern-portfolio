@@ -2,12 +2,14 @@ import { Button } from "@/components/common/ui/button.tsx";
 import { Input } from "@/components/common/ui/input.tsx";
 import { Textarea } from "@/components/common/ui/textarea.tsx";
 import { FormspreeProvider, useForm } from "@formspree/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
+import { Toast } from "@/components/common/Toast.tsx";
 
 export function CallToAction() {
   const [form, setForm] = useForm("xeqyzylo");
   const formRef = useRef<HTMLFormElement>(null);
+  const [showToast, setShowToast] = useState(false);
 
   function callHandler() {
     window.location.href = `tel:07702174700`;
@@ -18,6 +20,7 @@ export function CallToAction() {
   }
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    setShowToast(true);
     e.preventDefault();
 
     const target = e.target as typeof e.target & {
@@ -38,9 +41,23 @@ export function CallToAction() {
       formRef.current.reset();
     }
   }
+
+  function toggleHandler() {
+    console.log("toggle");
+    setShowToast(false);
+  }
+
   return (
     <RevealCenter>
       <section className=" px-5   py-32 md:max-w-[1400px] mx-auto relative">
+        {showToast ? (
+          <Toast toggleHandler={toggleHandler}>
+            Message: Successfully sent!
+          </Toast>
+        ) : (
+          ""
+        )}
+
         <div className={"grid grid-cols-1 sm:grid-cols-2 justify-end"}>
           <div
             className={
