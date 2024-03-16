@@ -1,11 +1,16 @@
 import { Terminal } from "@/components/common/Terminal.tsx";
 import { Button } from "@/components/common/ui/button.tsx";
 import { GridBackground } from "@/components/common/aceternity/GridBackground.tsx";
+import { animateScroll } from "react-scroll";
 
 export function HeroSection() {
-  function collaborateHandler() {
-    console.log("Let's Collaborate");
-  }
+  const collaborateHandler = () => {
+    const options = {
+      duration: 8000,
+      smooth: true,
+    };
+    animateScroll.scrollToBottom(options);
+  };
 
   return (
     <GridBackground>
