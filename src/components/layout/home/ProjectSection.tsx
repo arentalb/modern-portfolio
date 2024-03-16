@@ -1,6 +1,7 @@
 import { Button } from "@/components/common/ui/button.tsx";
 import { Link } from "react-router-dom";
 import { MovingCards } from "@/components/common/aceternity/MovingCards.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 interface ProjectProp {
   title: string;
@@ -37,23 +38,25 @@ const projectData: ProjectProp[] = [
 
 export function ProjectSection() {
   return (
-    <section className=" px-5   py-12 md:max-w-[1400px] mx-auto">
-      <div className={"flex justify-center flex-col items-center mb-24"}>
-        <p
-          className={
-            "text-base text-center font-bold text-gray-primary mb-14 max-w-[75%] sm:max-w-[500px] "
-          }
-        >
-          Dive into the diverse range of projects that showcase my skills and
-          passion for innovation.
-        </p>
-        <Button className={"font-bold"}>
-          <Link to={"https://github.com/arentalb?tab=repositories"}>
-            View All Projects
-          </Link>
-        </Button>
-      </div>
-      <MovingCards items={projectData} direction="right" speed="slow" />
-    </section>
+    <RevealCenter>
+      <section className=" px-5   py-12 md:max-w-[1400px] mx-auto">
+        <div className={"flex justify-center flex-col items-center mb-24"}>
+          <p
+            className={
+              "text-base text-center font-bold text-gray-primary mb-14 max-w-[75%] sm:max-w-[500px] "
+            }
+          >
+            Dive into the diverse range of projects that showcase my skills and
+            passion for innovation.
+          </p>
+          <Button className={"font-bold"}>
+            <Link to={"https://github.com/arentalb?tab=repositories"}>
+              View All Projects
+            </Link>
+          </Button>
+        </div>
+        <MovingCards items={projectData} direction="right" speed="slow" />
+      </section>
+    </RevealCenter>
   );
 }

@@ -1,4 +1,5 @@
 import { AnimatedSkills } from "@/components/common/aceternity/AnimatedSkills.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 interface SkillProps {
   id: number;
@@ -26,24 +27,29 @@ const skillsData: SkillProps[] = [
 
 export function SkillsSection() {
   return (
-    <section className=" px-5   py-32 md:max-w-[1400px] mx-auto  text-center  ">
-      <div className={"flex justify-center flex-col items-center"}>
-        <h1 className={"text-4xl font-bold mb-6"}> Skills That Set Me Apart</h1>
-        <p
-          className={
-            "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
-          }
-        >
-          My expertise extends across a spectrum of technologies, empowering me
-          to create exceptional digital experiences. Here's a glimpse of what I
-          bring to the table
-        </p>
-        <div className={"flex justify-center"}>
-          <div className="flex gap-8 md:gap-16 flex-wrap  justify-center">
-            <AnimatedSkills items={skillsData} />
+    <RevealCenter delay={0.3}>
+      <section className=" px-5   py-32 md:max-w-[1400px] mx-auto  text-center  ">
+        <div className={"flex justify-center flex-col items-center"}>
+          <h1 className={"text-4xl font-bold mb-6"}>
+            {" "}
+            Skills That Set Me Apart
+          </h1>
+          <p
+            className={
+              "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
+            }
+          >
+            My expertise extends across a spectrum of technologies, empowering
+            me to create exceptional digital experiences. Here's a glimpse of
+            what I bring to the table
+          </p>
+          <div className={"flex justify-center"}>
+            <div className="flex gap-8 md:gap-16 flex-wrap  justify-center">
+              <AnimatedSkills items={skillsData} />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </RevealCenter>
   );
 }

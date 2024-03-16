@@ -1,4 +1,5 @@
 import CountUp from "react-countup";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 interface StatisticProps {
   StatisticName: string;
@@ -32,23 +33,25 @@ const StatisticData: StatisticProps[] = [
 
 export function StatisticsSection() {
   return (
-    <section className=" px-5   py-32 md:max-w-[1400px] mx-auto  text-center ">
-      <div className={"flex justify-center flex-col items-center mb-14"}>
-        <h1 className={"text-4xl font-bold mb-6 pt-10"}>
-          Insights and Achievements
-        </h1>
-        <p
-          className={
-            "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
-          }
-        >
-          Discover the impact of my contributions through numbers
-        </p>
-      </div>
-      <div className={"flex justify-center flex-col items-center "}>
-        <Statistics />
-      </div>
-    </section>
+    <RevealCenter>
+      <section className=" px-5   py-32 md:max-w-[1400px] mx-auto  text-center ">
+        <div className={"flex justify-center flex-col items-center mb-14"}>
+          <h1 className={"text-4xl font-bold mb-6 pt-10"}>
+            Insights and Achievements
+          </h1>
+          <p
+            className={
+              "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
+            }
+          >
+            Discover the impact of my contributions through numbers
+          </p>
+        </div>
+        <div className={"flex justify-center flex-col items-center "}>
+          <Statistics />
+        </div>
+      </section>
+    </RevealCenter>
   );
 }
 

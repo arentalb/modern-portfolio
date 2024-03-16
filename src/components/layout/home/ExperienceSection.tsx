@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"; // import { calsans } from "@/fonts/calsans";
 import { TracingBeam } from "@/components/common/aceternity/TracingBeam.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 interface ExperienceProp {
   title: string;
@@ -34,21 +35,23 @@ const ExperienceData: ExperienceProp[] = [
 
 export function ExperienceSection() {
   return (
-    <section className=" px-5   py-12 md:max-w-[1400px] mx-auto pb-32">
-      <div className={"flex justify-center flex-col items-center mb-16"}>
-        <h1 className={"text-4xl font-bold mb-6 text-center"}>
-          From Projects to Progress
-        </h1>
-        <p
-          className={
-            "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
-          }
-        >
-          Explore the dynamic chapters of my career
-        </p>
-      </div>
-      <Experiences />
-    </section>
+    <RevealCenter delay={0.3}>
+      <section className=" px-5   py-12 md:max-w-[1400px] mx-auto pb-32">
+        <div className={"flex justify-center flex-col items-center mb-16"}>
+          <h1 className={"text-4xl font-bold mb-6 text-center"}>
+            From Projects to Progress
+          </h1>
+          <p
+            className={
+              "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
+            }
+          >
+            Explore the dynamic chapters of my career
+          </p>
+        </div>
+        <Experiences />
+      </section>
+    </RevealCenter>
   );
 }
 
