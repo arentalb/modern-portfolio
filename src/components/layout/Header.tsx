@@ -1,6 +1,7 @@
 import { NavLink, To } from "react-router-dom";
 import { ReactNode, useState } from "react";
 import { Toast } from "@/components/common/Toast.tsx";
+import { motion } from "framer-motion";
 
 interface NavItemProps {
   to: To;
@@ -16,19 +17,33 @@ export function Header() {
   }
 
   return (
-    <header className="p-5  md:max-w-[1400px] mx-auto">
+    <motion.header
+      className="p-5 md:max-w-[1400px] mx-auto"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div
         className={`flex justify-between md:mb-0 ${menu ? "mb-10" : "mb-0"}`}
       >
         <NavItem to={"/"}>
           <img src="/images/logo.svg" alt="Aren Logo" />
         </NavItem>
-        <img
-          src="/icons/menu.svg"
-          alt="Burger Menu"
-          onClick={toggleMenu}
-          className="sm:hidden cursor-pointer"
-        />
+        {menu ? (
+          <img
+            src="/icons/close.svg"
+            alt="Burger Menu"
+            onClick={toggleMenu}
+            className="sm:hidden cursor-pointer w-8 h-8"
+          />
+        ) : (
+          <img
+            src="/icons/menu.svg"
+            alt="Burger Menu"
+            onClick={toggleMenu}
+            className="sm:hidden cursor-pointer"
+          />
+        )}
 
         <nav className="w-full justify-end items-center text-2xl font-bold hidden sm:flex">
           <ul className="flex gap-10 items-center justify-end text-lg">
@@ -37,16 +52,19 @@ export function Header() {
         </nav>
       </div>
 
-      <nav
-        className={`w-full flex flex-col items-center text-2xl font-bold justify-between sm:hidden ${
-          menu ? "flex" : "hidden"
-        }`}
+      <motion.nav
+        className={`w-full flex flex-col items-center text-2xl font-bold justify-between sm:hidden`}
+        initial={{ height: 0, opacity: 0 }}
+        animate={
+          menu ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
+        }
+        transition={{ duration: 0.5 }}
       >
         <ul className="flex flex-col gap-10 items-center">
           <NavItems />
         </ul>
-      </nav>
-    </header>
+      </motion.nav>
+    </motion.header>
   );
 }
 
