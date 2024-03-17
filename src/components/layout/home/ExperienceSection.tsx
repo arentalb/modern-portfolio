@@ -36,7 +36,7 @@ const ExperienceData: ExperienceProp[] = [
 export function ExperienceSection() {
   return (
     <RevealCenter delay={0.3}>
-      <section className=" px-5   py-12 md:max-w-[1400px] mx-auto pb-32">
+      <section className=" px-5   py-12 md:max-w-[1400px] mx-auto pb-32 ">
         <div className={"flex justify-center flex-col items-center mb-16"}>
           <h1 className={"text-4xl font-bold mb-6 text-center"}>
             From Projects to Progress

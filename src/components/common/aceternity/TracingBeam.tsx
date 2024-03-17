@@ -45,7 +45,7 @@ export const TracingBeam = ({
         className,
       )}
     >
-      <div className="absolute -left-4 md:-left-20 top-3">
+      <div className="absolute -left-4 sm:-left-8 2xl:-left-20 top-3">
         <motion.div
           transition={{
             duration: 0.2,
@@ -57,7 +57,7 @@ export const TracingBeam = ({
                 ? "none"
                 : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           }}
-          className="ml-[27px] h-4 w-4 sm:w-8 sm:h-8 rounded-full border bg-white border-netural-200 shadow-sm flex items-center justify-center"
+          className="ml-[35px] sm:ml-[27px] h-4 w-4 sm:w-8 sm:h-8 rounded-full border bg-white border-netural-200 shadow-sm flex items-center justify-center"
         >
           <motion.div
             transition={{
