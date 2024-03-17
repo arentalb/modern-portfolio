@@ -56,7 +56,7 @@ export const Terminal = () => {
             complete feature set is currently in development.
           </p>
           <div className={"flex justify-center mb-2"}>
-            <img src="public/icons/caution.svg" alt="" />
+            <img src="/icons/caution.svg" alt="" />
           </div>
           <p className="text-red-600 max-w-[600px] mb-4 mx-auto">
             This terminal interface is based on my original idea. If you're

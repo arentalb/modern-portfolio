@@ -20,7 +20,7 @@ export function Popover({ isOpen, onClose, children }) {
               className="absolute top-0 right-0 p-2 m-2 text-white hover:text-gray-200 "
               onClick={onClose}
             >
-              <img src="public/icons/close.svg" alt="" />
+              <img src="/icons/close.svg" alt="" />
             </button>
             {children}
           </div>
