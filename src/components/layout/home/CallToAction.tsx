@@ -49,7 +49,7 @@ export function CallToAction() {
 
   return (
     <RevealCenter>
-      <section className=" px-5   py-32 md:max-w-[1400px] mx-auto relative">
+      <section className=" relative   mx-auto px-5 py-32 md:max-w-[1400px]">
         {showToast ? (
           <Toast toggleHandler={toggleHandler}>
             Message: Successfully sent!
@@ -58,14 +58,14 @@ export function CallToAction() {
           ""
         )}
 
-        <div className={"grid grid-cols-1 sm:grid-cols-2 justify-end"}>
+        <div className={"grid grid-cols-1 justify-end sm:grid-cols-2"}>
           <div
             className={
-              "flex justify-center flex-col items-center mb-14 sm:items-start text-center sm:text-start"
+              "mb-14 flex flex-col items-center justify-center text-center sm:items-start sm:text-start"
             }
           >
-            <h1 className={"text-4xl font-bold mb-6 "}>Get in Touch</h1>
-            <p className={"text-sm  text-gray-primary mb-14 sm:max-w-[500px] "}>
+            <h1 className={"mb-6 text-4xl font-bold "}>Get in Touch</h1>
+            <p className={"mb-14  text-sm text-gray-primary sm:max-w-[500px] "}>
               Feel free to reach out! Whether you have a question, want to
               discuss a project, or just say hello, I'm here for you.{" "}
             </p>
@@ -76,13 +76,13 @@ export function CallToAction() {
               </Button>
             </div>
           </div>
-          <div className={"sm:flex justify-end "}>
+          <div className={"justify-end sm:flex "}>
             <FormspreeProvider project="xeqyzylo">
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
                 className={
-                  "flex justify-center flex-col gap-10 sm:w-[400px] text-black"
+                  "flex flex-col justify-center gap-10 text-black sm:w-[400px]"
                 }
               >
                 <Input

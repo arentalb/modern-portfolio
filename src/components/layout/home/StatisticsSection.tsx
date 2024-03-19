@@ -34,20 +34,20 @@ const StatisticData: StatisticProps[] = [
 export function StatisticsSection() {
   return (
     <RevealCenter>
-      <section className=" px-5   py-32 md:max-w-[1400px] mx-auto  text-center ">
-        <div className={"flex justify-center flex-col items-center mb-14"}>
-          <h1 className={"text-4xl font-bold mb-6 pt-10"}>
+      <section className=" mx-auto   px-5 py-32 text-center  md:max-w-[1400px] ">
+        <div className={"mb-14 flex flex-col items-center justify-center"}>
+          <h1 className={"mb-6 pt-10 text-4xl font-bold"}>
             Insights and Achievements
           </h1>
           <p
             className={
-              "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
+              "mb-14 text-center text-sm text-gray-primary sm:max-w-[500px] "
             }
           >
             Discover the impact of my contributions through numbers
           </p>
         </div>
-        <div className={"flex justify-center flex-col items-center "}>
+        <div className={"flex flex-col items-center justify-center "}>
           <Statistics />
         </div>
       </section>
@@ -74,9 +74,9 @@ interface StatisticComponentProps {
 
 function Statistic({ statistic }: StatisticComponentProps) {
   return (
-    <div className={" rounded-3xl border-2 border-white p-4 relative "}>
+    <div className={" relative rounded-3xl border-2 border-white p-4 "}>
       <div
-        className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px"
+        className="absolute inset-x-0 -top-px mx-auto h-px w-1/2"
         style={{
           boxShadow: "0px 0px 20px 10px rgba(255, 255, 255, 0.2)",
           backgroundImage:
@@ -84,7 +84,7 @@ function Statistic({ statistic }: StatisticComponentProps) {
         }}
       />
 
-      <p className={"text-4xl font-bold mb-4"}>
+      <p className={"mb-4 text-4xl font-bold"}>
         <CountUp
           duration={6}
           end={statistic.count}

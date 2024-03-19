@@ -39,7 +39,7 @@ export const AnimatedSkills = ({
     <>
       {items.map((item) => (
         <div
-          className=" relative flex justify-center items-center border-2 border-white rounded-3xl p-4 "
+          className=" relative flex items-center justify-center rounded-3xl border-2 border-white p-4 "
           key={item.name}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -64,13 +64,13 @@ export const AnimatedSkills = ({
                   rotate: rotate,
                   whiteSpace: "nowrap",
                 }}
-                className="absolute  -top-16  -left-14  translate-x-1/2 sm:-left-16 "
+                className="absolute  -left-14  -top-16  translate-x-1/2 sm:-left-16 "
               >
                 {/*<div className="absolute inset-x-10 z-30 w-[20%]  -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />*/}
                 {/*<div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />*/}
                 <div
                   className={
-                    " bg-white text-black text-sm font-bold rounded-md z-50 shadow-xl px-4 py-2 w-[100px] sm:w-[130px] sm:text-base md:text-lg"
+                    " z-50 w-[100px] rounded-md bg-white px-4 py-2 text-sm font-bold text-black shadow-xl sm:w-[130px] sm:text-base md:text-lg"
                   }
                 >
                   <p>{item.name}</p>
@@ -83,7 +83,7 @@ export const AnimatedSkills = ({
             onMouseMove={handleMouseMove}
             src={item.imgURL}
             alt={item.name}
-            className="object-cover  object-top  w-12 md:w-16  group-hover:scale-105 group-hover:z-30   relative transition duration-500"
+            className="relative  w-12  object-cover object-top  transition duration-500   group-hover:z-30 group-hover:scale-105 md:w-16"
           />
         </div>
       ))}

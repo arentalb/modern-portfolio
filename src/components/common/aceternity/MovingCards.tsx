@@ -81,7 +81,7 @@ export const MovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap mb-24 ",
+          " mb-24 flex w-max min-w-full shrink-0 flex-nowrap gap-4 py-4 ",
           start && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
@@ -108,15 +108,15 @@ function Project({ project }: ProjectComponentProps) {
   return (
     <div
       className={
-        "flex flex-col items-start justify-between border border-white p-2 rounded-3xl px-6 pt-10 pb-6  max-w-[300px] sm:max-w-[600px]"
+        "flex max-w-[300px] flex-col items-start justify-between rounded-3xl border border-white p-2 px-6 pb-6  pt-10 sm:max-w-[600px]"
       }
     >
       <div>
-        <p className={"text-2xl sm:text-3xl font-bold mb-6"}>{project.title}</p>
-        <p className={"text-xs font-semibold mb-12 leading-5 block sm:hidden"}>
+        <p className={"mb-6 text-2xl font-bold sm:text-3xl"}>{project.title}</p>
+        <p className={"mb-12 block text-xs font-semibold leading-5 sm:hidden"}>
           {textShortner(project.description, 20)}
         </p>
-        <p className={"text-sm font-semibold mb-12 leading-6 hidden sm:block"}>
+        <p className={"mb-12 hidden text-sm font-semibold leading-6 sm:block"}>
           {textShortner(project.description, 40)}
         </p>
       </div>

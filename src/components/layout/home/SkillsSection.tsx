@@ -28,15 +28,15 @@ const skillsData: SkillProps[] = [
 export function SkillsSection() {
   return (
     <RevealCenter delay={0.3}>
-      <section className=" px-5   py-32 md:max-w-[1400px] mx-auto  text-center  ">
-        <div className={"flex justify-center flex-col items-center"}>
-          <h1 className={"text-4xl font-bold mb-6"}>
+      <section className=" mx-auto   px-5 py-32 text-center  md:max-w-[1400px]  ">
+        <div className={"flex flex-col items-center justify-center"}>
+          <h1 className={"mb-6 text-4xl font-bold"}>
             {" "}
             Skills That Set Me Apart
           </h1>
           <p
             className={
-              "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
+              "mb-14 text-center text-sm text-gray-primary sm:max-w-[500px] "
             }
           >
             My expertise extends across a spectrum of technologies, empowering
@@ -44,7 +44,7 @@ export function SkillsSection() {
             what I bring to the table
           </p>
           <div className={"flex justify-center"}>
-            <div className="flex gap-8 md:gap-16 flex-wrap  justify-center">
+            <div className="flex flex-wrap justify-center gap-8  md:gap-16">
               <AnimatedSkills items={skillsData} />
             </div>
           </div>

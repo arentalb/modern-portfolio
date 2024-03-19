@@ -5,10 +5,10 @@ export function BrightCurvedLine({ direction }: { direction: string }) {
   return (
     <div className={"px-5"}>
       <div
-        className={` md:max-w-[1400px] md:mx-auto 
-        ${direction === "up" && "border-t-4 rounded-t-[40px]"} 
-        ${direction === "down" && "border-b-4 rounded-b-[40px]"} 
-        border-white h-10`}
+        className={` md:mx-auto md:max-w-[1400px] 
+        ${direction === "up" && "rounded-t-[40px] border-t-4"} 
+        ${direction === "down" && "rounded-b-[40px] border-b-4"} 
+        h-10 border-white`}
       ></div>
     </div>
   );

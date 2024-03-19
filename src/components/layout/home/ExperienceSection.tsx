@@ -36,14 +36,14 @@ const ExperienceData: ExperienceProp[] = [
 export function ExperienceSection() {
   return (
     <RevealCenter delay={0.3}>
-      <section className=" px-5   py-12 md:max-w-[1400px] mx-auto pb-32 ">
-        <div className={"flex justify-center flex-col items-center mb-16"}>
-          <h1 className={"text-4xl font-bold mb-6 text-center"}>
+      <section className=" mx-auto   px-5 py-12 pb-32 md:max-w-[1400px] ">
+        <div className={"mb-16 flex flex-col items-center justify-center"}>
+          <h1 className={"mb-6 text-center text-4xl font-bold"}>
             From Projects to Progress
           </h1>
           <p
             className={
-              "text-sm text-center text-gray-primary mb-14 sm:max-w-[500px] "
+              "mb-14 text-center text-sm text-gray-primary sm:max-w-[500px] "
             }
           >
             Explore the dynamic chapters of my career
@@ -58,7 +58,7 @@ export function ExperienceSection() {
 function Experiences() {
   return (
     <TracingBeam className="px-6">
-      <div className=" mx-auto antialiased pt-4 relative flex gap-24 flex-col w-full">
+      <div className=" relative mx-auto flex w-full flex-col gap-24 pt-4 antialiased">
         {ExperienceData.map((item) => (
           <Experience experience={item} key={item.title} />
         ))}
@@ -75,16 +75,16 @@ function Experience({ experience }: ExperienceComponentProps) {
   return (
     <div
       className={
-        "ml-4 border-2 border-white rounded-3xl  w-full px-6 py-8 sm:px-16 sm:py-14   flex  justify-between "
+        "ml-4 flex w-full justify-between  rounded-3xl border-2 border-white px-6 py-8   sm:px-16  sm:py-14 "
       }
     >
       <div>
-        <p className={"font-bold text-2xl mb-16 sm:mb-6 sm:text-3xl"}>
+        <p className={"mb-16 text-2xl font-bold sm:mb-6 sm:text-3xl"}>
           {experience.title}
         </p>
         <p
           className={
-            "text-base text-gray-primary sm:mb-14 sm:font-bold sm:text-lg"
+            "text-base text-gray-primary sm:mb-14 sm:text-lg sm:font-bold"
           }
         >
           {experience.date}
@@ -93,7 +93,7 @@ function Experience({ experience }: ExperienceComponentProps) {
           {experience.description}
         </p>
       </div>
-      <div className={" min-w-6 max-w-8  flex  items-end sm:items-start"}>
+      <div className={" flex min-w-6  max-w-8  items-end sm:items-start"}>
         <Link to={experience.link}>
           <img src="/icons/externalLink.svg" alt="" />
         </Link>

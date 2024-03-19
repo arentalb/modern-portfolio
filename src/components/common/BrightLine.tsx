@@ -9,7 +9,7 @@ export function BrightLine({ gradient }: { gradient?: string }) {
         }}
       ></div>
       <div
-        className="left-1/2 top-0 w-[300px] z-20 center absolute h-px -translate-x-1/2 -translate-y-1/2"
+        className="center absolute left-1/2 top-0 z-20 h-px w-[300px] -translate-x-1/2 -translate-y-1/2"
         style={{
           background: `${
             gradient ||
@@ -19,7 +19,7 @@ export function BrightLine({ gradient }: { gradient?: string }) {
       ></div>
 
       <div
-        className="-top-1 left-1/2 h-[200px] w-full md:max-w-[400px]    absolute max-w-full -translate-x-1/2 -translate-y-1/2"
+        className="absolute -top-1 left-1/2 h-[200px] w-full    max-w-full -translate-x-1/2 -translate-y-1/2 md:max-w-[400px]"
         style={{
           background:
             "conic-gradient(from 90deg at 50% 50%, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 50%), radial-gradient(rgba(200, 200, 200, 0.1) 0%, transparent 80%)",

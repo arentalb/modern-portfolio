@@ -39,11 +39,11 @@ const projectData: ProjectProp[] = [
 export function ProjectSection() {
   return (
     <RevealCenter>
-      <section className=" px-5   py-12 md:max-w-[1400px] mx-auto">
-        <div className={"flex justify-center flex-col items-center mb-24"}>
+      <section className=" mx-auto   px-5 py-12 md:max-w-[1400px]">
+        <div className={"mb-24 flex flex-col items-center justify-center"}>
           <p
             className={
-              "text-base text-center font-bold text-gray-primary mb-14 max-w-[75%] sm:max-w-[500px] "
+              "mb-14 max-w-[75%] text-center text-base font-bold text-gray-primary sm:max-w-[500px] "
             }
           >
             Dive into the diverse range of projects that showcase my skills and

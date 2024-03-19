@@ -8,20 +8,20 @@ export function CertificateSection() {
   return (
     <>
       <RevealCenter>
-        <section className=" px-5  pt-36 pb-12 md:max-w-[1400px] mx-auto ">
+        <section className=" mx-auto  px-5 pb-12 pt-36 md:max-w-[1400px] ">
           <Spotlight className={""} fill={"white"} />
           <div
             className={
-              "flex justify-between  items-center flex-col sm:flex-row"
+              "flex flex-col  items-center justify-between sm:flex-row"
             }
           >
             <div className={"text-center sm:text-start"}>
-              <h1 className={"text-4xl font-bold mb-6 z-20"}>
+              <h1 className={"z-20 mb-6 text-4xl font-bold"}>
                 Showcasing my Achievements
               </h1>
               <p
                 className={
-                  "text-sm  text-gray-primary mb-14 sm:max-w-[500px] z-20"
+                  "z-20  mb-14 text-sm text-gray-primary sm:max-w-[500px]"
                 }
               >
                 Explore a collection of certifications that validate my skills
@@ -41,10 +41,10 @@ export function CertificateSection() {
             </div>
           </div>
         </section>
-        <section className={"relative  overflow-hidden pt-32 pb-64"}>
+        <section className={"relative  overflow-hidden pb-64 pt-32"}>
           <div
             className={
-              "bg-white text-black -rotate-6 text-2xl sm:text-4xl scale-110 text-center py-5 font-shadow italic font-bold"
+              "-rotate-6 scale-110 bg-white py-5 text-center font-shadow text-2xl font-bold italic text-black sm:text-4xl"
             }
           >
             <ReactTyped

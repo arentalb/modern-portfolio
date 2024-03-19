@@ -1,8 +1,8 @@
 export function Toast({ children, toggleHandler }) {
   return (
     <>
-      <div className="z-[200] fixed bottom-0 right-0 mb-4 mr-4 bg-white text-black px-4 py-2 rounded shadow-lg">
-        <div className="flex justify-between items-center">
+      <div className="fixed bottom-0 right-0 z-[200] mb-4 mr-4 rounded bg-white px-4 py-2 text-black shadow-lg">
+        <div className="flex items-center justify-between">
           <div>{children}</div>
           <button
             onClick={() => toggleHandler()}

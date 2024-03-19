@@ -18,7 +18,7 @@ export function Header() {
 
   return (
     <motion.header
-      className="p-5 md:max-w-[1400px] mx-auto"
+      className="mx-auto p-5 md:max-w-[1400px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -34,33 +34,33 @@ export function Header() {
             src="/icons/close.svg"
             alt="Burger Menu"
             onClick={toggleMenu}
-            className="sm:hidden cursor-pointer w-8 h-8"
+            className="h-8 w-8 cursor-pointer sm:hidden"
           />
         ) : (
           <img
             src="/icons/menu.svg"
             alt="Burger Menu"
             onClick={toggleMenu}
-            className="sm:hidden cursor-pointer"
+            className="cursor-pointer sm:hidden"
           />
         )}
 
-        <nav className="w-full justify-end items-center text-2xl font-bold hidden sm:flex">
-          <ul className="flex gap-10 items-center justify-end text-lg">
+        <nav className="hidden w-full items-center justify-end text-2xl font-bold sm:flex">
+          <ul className="flex items-center justify-end gap-10 text-lg">
             <NavItems />
           </ul>
         </nav>
       </div>
 
       <motion.nav
-        className={`w-full flex flex-col items-center text-2xl font-bold justify-between sm:hidden`}
+        className={`flex w-full flex-col items-center justify-between text-2xl font-bold sm:hidden`}
         initial={{ height: 0, opacity: 0 }}
         animate={
           menu ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
         }
         transition={{ duration: 0.5 }}
       >
-        <ul className="flex flex-col gap-10 items-center">
+        <ul className="flex flex-col items-center gap-10">
           <NavItems />
         </ul>
       </motion.nav>

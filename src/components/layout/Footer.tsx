@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="p-5  md:max-w-[1400px] mx-auto ">
+    <footer className="mx-auto  p-5 md:max-w-[1400px] ">
       <div className={"mb-8"}>
         <BrightLine
           gradient={
@@ -13,10 +13,10 @@ export function Footer() {
       </div>
       <div
         className={
-          "flex justify-between flex-col-reverse items-center gap-10 sm:flex-row"
+          "flex flex-col-reverse items-center justify-between gap-10 sm:flex-row"
         }
       >
-        <div className={"flex gap-8 sm:gap-4 items-center"}>
+        <div className={"flex items-center gap-8 sm:gap-4"}>
           <Link to={"https://github.com/arentalb"}>
             <img src="/icons/github.svg" alt="" />
           </Link>
@@ -28,12 +28,12 @@ export function Footer() {
           </Link>
         </div>
         <div className={"text-center"}>
-          <p className={"text-gray-primary text-xs font-bold mb-2"}>
+          <p className={"mb-2 text-xs font-bold text-gray-primary"}>
             Designed and Developed By
           </p>
-          <p className={"font-bold text-2xl "}>Aren Talb </p>
+          <p className={"text-2xl font-bold "}>Aren Talb </p>
         </div>
-        <div className={"sm:flex justify-center items-center hidden"}>
+        <div className={"hidden items-center justify-center sm:flex"}>
           <Link to={"/"}>
             <img src="/images/logo.svg" alt="" />
           </Link>

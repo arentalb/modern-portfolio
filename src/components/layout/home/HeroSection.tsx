@@ -16,16 +16,16 @@ export function HeroSection() {
   return (
     <GridBackground>
       <RevealCenter>
-        <section className=" px-5 pt-8  pb-32 sm:pt-12 md:max-w-[1400px] mx-auto flex flex-col justify-between gap-20 items-center sm:flex-row ">
+        <section className=" mx-auto flex flex-col    items-center justify-between  gap-20 px-5  pb-32 pt-8 sm:flex-row sm:pt-12 md:max-w-[1400px]  ">
           <div
             className={
-              "flex flex-col items-center text-center mt-8 sm:items-start sm:text-start sm:max-w-96"
+              "mt-8 flex flex-col items-center text-center sm:max-w-96 sm:items-start sm:text-start"
             }
           >
-            <h1 className={"text-5xl font-bold mb-6 z-50"}>
+            <h1 className={"z-50 mb-6 text-5xl font-bold"}>
               Your Gateway to Innovation
             </h1>
-            <p className={" text-sm mb-14 text-gray-primary font-bold z-50"}>
+            <p className={" z-50 mb-14 text-sm font-bold text-gray-primary"}>
               Welcome to my world of creativity and code, where every line
               brings ideas to life.
             </p>
