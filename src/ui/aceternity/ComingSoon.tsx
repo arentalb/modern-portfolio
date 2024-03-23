@@ -1,4 +1,4 @@
-import { SparklesCore } from "@/components/common/aceternity/Sparkles.tsx";
+import { SparklesCore } from "@/ui/aceternity/Sparkles.tsx";
 
 export function ComingSoon({ text }) {
   return (

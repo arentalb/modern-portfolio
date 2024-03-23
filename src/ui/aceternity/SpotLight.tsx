@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils.ts";
+import { cn } from "@/utils/utils.ts";
 
 export const Spotlight = ({ className, fill }) => {
   return (

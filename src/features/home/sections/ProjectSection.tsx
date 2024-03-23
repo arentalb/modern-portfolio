@@ -1,7 +1,7 @@
-import { Button } from "@/components/common/ui/button.tsx";
+import { Button } from "@/ui/ui/button.tsx";
 import { Link } from "react-router-dom";
-import { MovingCards } from "@/components/common/aceternity/MovingCards.tsx";
-import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
+import { MovingCards } from "@/ui/aceternity/MovingCards.tsx";
+import { RevealCenter } from "@/ui/animations/RevealCenter.tsx";
 
 interface ProjectProp {
   title: string;
@@ -13,7 +13,7 @@ const projectData: ProjectProp[] = [
   {
     title: "My Portfolio - React Project ",
     description:
-      "Discover my personal portfolio website, a showcase of my skills, experiences, and projects. Crafted with React and spiced up with animations using Framer Motion and React Spring. Enjoy smooth navigation with React Router and sleek styling with Tailwind CSS. TypeScript ensures code quality while Vite powers fast development. Each design element is meticulously created from scratch using Figma for a unique visual experience.",
+      "Discover my personal portfolio website, a home of my skills, experiences, and projects. Crafted with React and spiced up with animations using Framer Motion and React Spring. Enjoy smooth navigation with React Router and sleek styling with Tailwind CSS. TypeScript ensures code quality while Vite powers fast development. Each design element is meticulously created from scratch using Figma for a unique visual experience.",
     link: "/",
   },
   {

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { cn } from "@/lib/utils.ts";
+import { cn } from "@/utils/utils.ts";
 
 export const TracingBeam = ({
   children,

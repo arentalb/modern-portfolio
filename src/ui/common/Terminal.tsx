@@ -1,5 +1,5 @@
-import { Button } from "@/components/common/ui/button.tsx";
-import { Popover } from "@/components/common/Popover.tsx";
+import { Button } from "@/ui/ui/button.tsx";
+import { Popover } from "@/ui/common/Popover.tsx";
 import { useState } from "react";
 import { useTerminal } from "@/context/TerminalContext.tsx";
 
