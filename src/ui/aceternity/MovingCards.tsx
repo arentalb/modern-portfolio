@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils.ts";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 

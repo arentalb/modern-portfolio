@@ -1,8 +1,8 @@
-import { Terminal } from "@/components/common/Terminal.tsx";
-import { Button } from "@/components/common/ui/button.tsx";
-import { GridBackground } from "@/components/common/aceternity/GridBackground.tsx";
+import { Terminal } from "@/ui/common/Terminal.tsx";
+import { Button } from "@/ui/ui/button.tsx";
+import { GridBackground } from "@/ui/aceternity/GridBackground.tsx";
 import { animateScroll } from "react-scroll";
-import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
+import { RevealCenter } from "@/ui/animations/RevealCenter.tsx";
 
 export function HeroSection() {
   const collaborateHandler = () => {

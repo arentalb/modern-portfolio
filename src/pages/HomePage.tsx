@@ -1,14 +1,14 @@
-import { Header } from "@/components/layout/Header.tsx";
-import { HeroSection } from "@/components/layout/home/HeroSection.tsx";
-import { SkillsSection } from "@/components/layout/home/SkillsSection.tsx";
-import { BrightLine } from "@/components/common/BrightLine.tsx";
-import { BrightCurvedLine } from "@/components/common/BrightCurvedLine.tsx";
-import { ProjectSection } from "@/components/layout/home/ProjectSection.tsx";
-import { ExperienceSection } from "@/components/layout/home/ExperienceSection.tsx";
-import { CertificateSection } from "@/components/layout/home/CertificateSection.tsx";
-import { StatisticsSection } from "@/components/layout/home/StatisticsSection.tsx";
-import { CallToAction } from "@/components/layout/home/CallToAction.tsx";
-import { Footer } from "@/components/layout/Footer.tsx";
+import { Header } from "@/ui/Header.tsx";
+import { HeroSection } from "@/features/home/sections/HeroSection.tsx";
+import { SkillsSection } from "@/features/home/sections/SkillsSection.tsx";
+import { BrightLine } from "@/ui/common/BrightLine.tsx";
+import { BrightCurvedLine } from "@/ui/common/BrightCurvedLine.tsx";
+import { ProjectSection } from "@/features/home/sections/ProjectSection.tsx";
+import { ExperienceSection } from "@/features/home/sections/ExperienceSection.tsx";
+import { CertificateSection } from "@/features/home/sections/CertificateSection.tsx";
+import { StatisticsSection } from "@/features/home/sections/StatisticsSection.tsx";
+import { CallToAction } from "@/features/home/sections/CallToAction.tsx";
+import { Footer } from "@/ui/Footer.tsx";
 
 export function HomePage() {
   return (

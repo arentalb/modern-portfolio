@@ -1,6 +1,6 @@
 import { NavLink, To } from "react-router-dom";
 import { ReactNode, useState } from "react";
-import { Toast } from "@/components/common/Toast.tsx";
+import { Toast } from "@/ui/common/Toast.tsx";
 import { motion } from "framer-motion";
 
 interface NavItemProps {

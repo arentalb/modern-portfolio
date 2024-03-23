@@ -1,8 +1,8 @@
-import { Button } from "@/components/common/ui/button.tsx";
+import { Button } from "@/ui/ui/button.tsx";
 import { Link } from "react-router-dom";
-import { Spotlight } from "@/components/common/aceternity/SpotLight.tsx";
+import { Spotlight } from "@/ui/aceternity/SpotLight.tsx";
 import { ReactTyped } from "react-typed";
-import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
+import { RevealCenter } from "@/ui/animations/RevealCenter.tsx";
 
 export function CertificateSection() {
   return (
