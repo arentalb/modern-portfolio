@@ -5,6 +5,8 @@ import { HomePage } from "@/pages/HomePage.tsx";
 import { BrowserRouter } from "react-router-dom";
 import { CertificatePage } from "@/pages/CertificatePage.tsx";
 import { TerminalProvider } from "@/context/TerminalContext.tsx";
+import { ProjectsPage } from "@/pages/ProjectsPage.tsx";
+import { ExperiencePage } from "@/pages/ExperiencePage.tsx";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           {/*<Route path={""} element={<HomePage />} />*/}
           <Route path={""} element={<HomePage />} />
+          <Route path={"/projects"} element={<ProjectsPage />} />
+          <Route path={"/experience"} element={<ExperiencePage />} />
           <Route path={"/article"} element={<ArticlePage />} />
           {/*<Route path={"/tutorial"} element={<TutorialPage />} />*/}
           {/*<Route path={"/course"} element={<CoursePage />} />*/}

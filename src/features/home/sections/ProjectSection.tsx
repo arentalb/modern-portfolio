@@ -50,9 +50,7 @@ export function ProjectSection() {
             passion for innovation.
           </p>
           <Button className={"font-bold"}>
-            <Link to={"https://github.com/arentalb?tab=repositories"}>
-              View All Projects
-            </Link>
+            <Link to={"/projects"}>View All Projects</Link>
           </Button>
         </div>
         <MovingCards items={projectData} direction="right" speed="slow" />

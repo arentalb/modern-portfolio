@@ -1,7 +1,8 @@
 import { NavLink, To } from "react-router-dom";
-import { ReactNode, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { Toast } from "@/ui/common/Toast.tsx";
 import { motion } from "framer-motion";
+import { animateScroll } from "react-scroll";
 
 interface NavItemProps {
   to: To;
@@ -69,6 +70,14 @@ export function Header() {
 }
 
 function NavItem({ to, children, icon }: NavItemProps) {
+  const scrollToSection = () => {
+    const options = {
+      duration: 8000,
+      smooth: true,
+    };
+    animateScroll.scrollToBottom(options);
+  };
+
   return (
     <li className="flex items-center">
       <NavLink
@@ -87,10 +96,14 @@ function NavItem({ to, children, icon }: NavItemProps) {
 function NavItems() {
   return (
     <>
+      <NavItem to="/projects">Projects</NavItem>
+      <NavItem to="/experience">Experience</NavItem>
       <NavItem to="/article">Article</NavItem>
       {/*<NavItem to="/tutorial">Tutorial</NavItem>*/}
       {/*<NavItem to="/course">Course</NavItem>*/}
-      <TerminalIcon />
+      <NavItem to="/certificates">Certificates</NavItem>
+
+      {/*<TerminalIcon />*/}
     </>
   );
 }
