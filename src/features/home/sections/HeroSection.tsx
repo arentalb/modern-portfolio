@@ -1,4 +1,4 @@
-import { Terminal } from "@/ui/common/Terminal.tsx";
+import { Terminal } from "@/features/home/Terminal.tsx";
 import { Button } from "@/ui/ui/button.tsx";
 import { GridBackground } from "@/ui/aceternity/GridBackground.tsx";
 import { animateScroll } from "react-scroll";

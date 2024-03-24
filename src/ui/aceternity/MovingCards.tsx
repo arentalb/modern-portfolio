@@ -1,6 +1,6 @@
 import { cn } from "@/utils/utils.ts";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { ProjectCard } from "@/features/home/ProjectCard.tsx";
 
 export const MovingCards = ({
   items,
@@ -87,49 +87,9 @@ export const MovingCards = ({
         )}
       >
         {items.map((item) => (
-          <Project project={item} key={item.title} />
+          <ProjectCard project={item} key={item.title} />
         ))}
       </ul>
     </div>
   );
 };
-
-interface ProjectProp {
-  title: string;
-  description: string;
-  link: string;
-}
-
-interface ProjectComponentProps {
-  project: ProjectProp;
-}
-
-function Project({ project }: ProjectComponentProps) {
-  return (
-    <div
-      className={
-        "flex max-w-[300px] flex-col items-start justify-between rounded-3xl border border-white p-2 px-6 pb-6  pt-10 sm:max-w-[600px]"
-      }
-    >
-      <div>
-        <p className={"mb-6 text-2xl font-bold sm:text-3xl"}>{project.title}</p>
-        <p className={"mb-12 block text-xs font-semibold leading-5 sm:hidden"}>
-          {textShortner(project.description, 20)}
-        </p>
-        <p className={"mb-12 hidden text-sm font-semibold leading-6 sm:block"}>
-          {textShortner(project.description, 40)}
-        </p>
-      </div>
-      <div className={"flex w-full justify-end  "}>
-        <Link to={project.link}>
-          <img src="/icons/github-project.svg" alt="" />
-        </Link>
-      </div>
-    </div>
-  );
-}
-
-function textShortner(text: string, lenght: number) {
-  const shortenedText = text.split(" ").slice(0, lenght).join(" ");
-  return shortenedText + (text.split(" ").length > lenght ? " ..." : "");
-}

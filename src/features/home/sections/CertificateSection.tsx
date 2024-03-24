@@ -42,21 +42,27 @@ export function CertificateSection() {
           </div>
         </section>
         <section className={"relative  overflow-hidden pb-64 pt-32"}>
-          <div
-            className={
-              "-rotate-6 scale-110 bg-white py-5 text-center font-shadow text-2xl font-bold italic text-black sm:text-4xl"
-            }
-          >
-            <ReactTyped
-              startDelay={50}
-              startWhenVisible
-              stopped
-              strings={["Elevate Your Skills Beyond Paper"]}
-              typeSpeed={50}
-            />
-          </div>
+          <QuoteLabel />
         </section>
       </RevealCenter>
     </>
+  );
+}
+
+function QuoteLabel() {
+  return (
+    <div
+      className={
+        "-rotate-6 scale-110 bg-white py-5 text-center font-shadow text-2xl font-bold italic text-black sm:text-4xl"
+      }
+    >
+      <ReactTyped
+        startDelay={50}
+        startWhenVisible
+        stopped
+        strings={["Elevate Your Skills Beyond Paper"]}
+        typeSpeed={50}
+      />
+    </div>
   );
 }
