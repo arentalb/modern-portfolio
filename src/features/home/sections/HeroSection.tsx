@@ -22,10 +22,14 @@ export function HeroSection() {
               "mt-8 flex flex-col items-center text-center sm:max-w-96 sm:items-start sm:text-start"
             }
           >
-            <h1 className={"z-50 mb-6 text-5xl font-bold"}>
+            <h1 className={"z-50 mb-6 text-5xl font-bold md:text-6xl"}>
               Your Gateway to Innovation
             </h1>
-            <p className={" z-50 mb-14 text-sm font-bold text-gray-primary"}>
+            <p
+              className={
+                " z-50 mb-14 text-sm font-bold text-gray-primary md:text-base"
+              }
+            >
               Welcome to my world of creativity and code, where every line
               brings ideas to life.
             </p>

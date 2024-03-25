@@ -36,17 +36,19 @@ const ExperienceData: ExperienceProp[] = [
 export function ExperienceSection() {
   return (
     <RevealCenter delay={0.3}>
-      <section className=" mx-auto   px-5 py-12 pb-32 md:max-w-[1400px] ">
+      <section className=" mx-auto  px-5 pb-32 md:max-w-[1400px] ">
         <div className={"mb-16 flex flex-col items-center justify-center"}>
           <h1 className={"mb-6 text-center text-4xl font-bold"}>
             From Projects to Progress
           </h1>
           <p
             className={
-              "mb-14 text-center text-sm text-gray-primary sm:max-w-[500px] "
+              "mb-14 text-center text-sm font-bold   text-gray-primary sm:max-w-[500px] "
             }
           >
-            Explore the dynamic chapters of my career
+            Embark on an immersive journey through the dynamic chapters of my
+            career, where each project represents a milestone of innovation and
+            creativity
           </p>
         </div>
         <Experiences />

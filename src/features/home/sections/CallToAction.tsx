@@ -49,7 +49,7 @@ export function CallToAction() {
 
   return (
     <RevealCenter>
-      <section className=" relative   mx-auto px-5 py-32 md:max-w-[1400px]">
+      <section className=" relative   mx-auto  px-5 py-20  sm:py-32 md:max-w-[1400px]">
         {showToast ? (
           <Toast toggleHandler={toggleHandler}>
             Message: Successfully sent!
@@ -65,11 +65,15 @@ export function CallToAction() {
             }
           >
             <h1 className={"mb-6 text-4xl font-bold "}>Get in Touch</h1>
-            <p className={"mb-14  text-sm text-gray-primary sm:max-w-[500px] "}>
+            <p
+              className={
+                "mb-14  text-sm font-bold  text-gray-primary sm:max-w-[500px] "
+              }
+            >
               Feel free to reach out! Whether you have a question, want to
               discuss a project, or just say hello, I'm here for you.{" "}
             </p>
-            <div className={"flex gap-4"}>
+            <div className={"flex gap-4 font-bold"}>
               <Button onClick={emailHandler}>Email Me</Button>
               <Button variant={"outline"} onClick={callHandler}>
                 Call Me

@@ -31,12 +31,11 @@ export function SkillsSection() {
       <section className=" mx-auto   px-5 py-32 text-center  md:max-w-[1400px]  ">
         <div className={"flex flex-col items-center justify-center"}>
           <h1 className={"mb-6 text-4xl font-bold"}>
-            {" "}
             Skills That Set Me Apart
           </h1>
           <p
             className={
-              "mb-14 text-center text-sm text-gray-primary sm:max-w-[500px] "
+              "mb-14 text-center text-sm font-bold  text-gray-primary sm:max-w-[500px] "
             }
           >
             My expertise extends across a spectrum of technologies, empowering

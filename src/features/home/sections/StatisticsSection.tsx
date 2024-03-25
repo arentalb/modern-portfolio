@@ -34,17 +34,18 @@ const StatisticData: StatisticProps[] = [
 export function StatisticsSection() {
   return (
     <RevealCenter>
-      <section className=" mx-auto   px-5 py-32 text-center  md:max-w-[1400px] ">
+      <section className=" mx-auto    px-5 py-20 text-center  sm:py-32  md:max-w-[1400px] ">
         <div className={"mb-14 flex flex-col items-center justify-center"}>
           <h1 className={"mb-6 pt-10 text-4xl font-bold"}>
             Insights and Achievements
           </h1>
           <p
             className={
-              "mb-14 text-center text-sm text-gray-primary sm:max-w-[500px] "
+              "mb-14 text-center text-sm font-bold   text-gray-primary sm:max-w-[500px] "
             }
           >
-            Discover the impact of my contributions through numbers
+            Uncover the profound impact of my contributions, quantified through
+            tangible numbers and measurable results.
           </p>
         </div>
         <div className={"flex flex-col items-center justify-center "}>

@@ -8,7 +8,7 @@ export function CertificateSection() {
   return (
     <>
       <RevealCenter>
-        <section className=" mx-auto  px-5 pb-12 pt-36 md:max-w-[1400px] ">
+        <section className=" mx-auto   px-5 py-32 md:max-w-[1400px] ">
           <Spotlight className={""} fill={"white"} />
           <div
             className={
@@ -21,7 +21,7 @@ export function CertificateSection() {
               </h1>
               <p
                 className={
-                  "z-20  mb-14 text-sm text-gray-primary sm:max-w-[500px]"
+                  "z-20 mb-14  text-sm  font-bold   text-gray-primary sm:max-w-[500px]"
                 }
               >
                 Explore a collection of certifications that validate my skills
@@ -29,7 +29,9 @@ export function CertificateSection() {
                 represents a milestone in my professional journey.
               </p>
               <Link to={"certificates"}>
-                <Button className={"z-20"}>View All Certificates</Button>
+                <Button className={"z-20 font-bold"}>
+                  View All Certificates
+                </Button>
               </Link>
             </div>
             <div className={"max-w-[400px]"}>
@@ -41,7 +43,9 @@ export function CertificateSection() {
             </div>
           </div>
         </section>
-        <section className={"relative  overflow-hidden pb-64 pt-32"}>
+        <section
+          className={"relative  overflow-hidden pb-44 pt-16 sm:pb-64 sm:pt-32"}
+        >
           <QuoteLabel />
         </section>
       </RevealCenter>
