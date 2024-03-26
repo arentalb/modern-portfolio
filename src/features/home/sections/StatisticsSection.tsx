@@ -62,7 +62,7 @@ function Statistics() {
   return (
     <div
       className={
-        "grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-16"
+        "md: grid grid-cols-2  gap-4 sm:gap-8 md:gap-x-16 md:gap-y-12 lg:grid-cols-4 lg:gap-16"
       }
     >
       {StatisticData.map((StatisticDatum) => (
@@ -82,7 +82,9 @@ interface StatisticComponentProps {
 function Statistic({ statistic }: StatisticComponentProps) {
   return (
     <div
-      className={"relative rounded-3xl border-2 border-white p-4 sm:p-6 md:p-8"}
+      className={
+        "relative flex flex-col justify-center rounded-3xl border-2  border-white p-4 "
+      }
     >
       <div
         className="absolute inset-x-0 -top-px mx-auto h-px w-1/2"
