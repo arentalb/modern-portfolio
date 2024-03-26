@@ -34,14 +34,16 @@ const StatisticData: StatisticProps[] = [
 export function StatisticsSection() {
   return (
     <RevealCenter>
-      <section className=" mx-auto    px-5 py-20 text-center  sm:py-32  md:max-w-[1400px] ">
-        <div className={"mb-14 flex flex-col items-center justify-center"}>
-          <h1 className={"mb-6 pt-10 text-4xl font-bold"}>
-            Insights and Achievements
-          </h1>
+      <section className=" mx-auto    max-w-[1400px] px-5 py-20  text-center  sm:py-32 ">
+        <div
+          className={
+            "mb-14 flex flex-col items-center justify-center font-bold "
+          }
+        >
+          <h1 className={"mb-6 text-4xl"}>Insights and Achievements</h1>
           <p
             className={
-              "mb-14 text-center text-sm font-bold   text-gray-primary sm:max-w-[500px] "
+              "mb-14 max-w-[500px] text-center text-sm text-gray-primary "
             }
           >
             Uncover the profound impact of my contributions, quantified through
@@ -58,7 +60,11 @@ export function StatisticsSection() {
 
 function Statistics() {
   return (
-    <div className={"grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-16"}>
+    <div
+      className={
+        "grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-16"
+      }
+    >
       {StatisticData.map((StatisticDatum) => (
         <Statistic
           statistic={StatisticDatum}
@@ -75,7 +81,9 @@ interface StatisticComponentProps {
 
 function Statistic({ statistic }: StatisticComponentProps) {
   return (
-    <div className={" relative rounded-3xl border-2 border-white p-4 "}>
+    <div
+      className={"relative rounded-3xl border-2 border-white p-4 sm:p-6 md:p-8"}
+    >
       <div
         className="absolute inset-x-0 -top-px mx-auto h-px w-1/2"
         style={{

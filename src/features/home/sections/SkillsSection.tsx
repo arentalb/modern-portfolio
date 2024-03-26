@@ -28,16 +28,14 @@ const skillsData: SkillProps[] = [
 export function SkillsSection() {
   return (
     <RevealCenter delay={0.3}>
-      <section className=" mx-auto   px-5 py-32 text-center  md:max-w-[1400px]  ">
-        <div className={"flex flex-col items-center justify-center"}>
-          <h1 className={"mb-6 text-4xl font-bold"}>
-            Skills That Set Me Apart
-          </h1>
-          <p
-            className={
-              "mb-14 text-center text-sm font-bold  text-gray-primary sm:max-w-[500px] "
-            }
-          >
+      <section className="mx-auto max-w-[1400px] px-5 py-32  text-center  ">
+        <div
+          className={
+            "flex flex-col items-center justify-center text-center font-bold"
+          }
+        >
+          <h1 className={"mb-6 text-4xl "}>Skills That Set Me Apart</h1>
+          <p className={"mb-14  max-w-[500px]   text-sm text-gray-primary "}>
             My expertise extends across a spectrum of technologies, empowering
             me to create exceptional digital experiences. Here's a glimpse of
             what I bring to the table

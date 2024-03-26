@@ -5,9 +5,7 @@ export function ProjectsPage() {
   return (
     <>
       <Header />
-      <div>
-        <ComingSoon text={"Coming soon"} />
-      </div>
+      <ComingSoon text={"Coming soon"} />
     </>
   );
 }

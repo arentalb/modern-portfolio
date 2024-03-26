@@ -30,7 +30,8 @@ export const Terminal = () => {
             runCommand();
           }
         }}
-        className={` scroll absolute bottom-0 right-0 z-10 h-[95%] w-[95%] resize-none rounded-3xl border-2 border-white bg-black p-4 font-mono   text-base text-white focus:outline-none `}
+        autoFocus
+        className={` scroll absolute bottom-0 right-0 z-10 h-[95%] w-[95%] resize-none rounded-3xl border-2 border-white bg-transparent p-4 font-mono   text-base text-white focus:outline-none `}
         style={{ overflowY: "hidden", scrollbarWidth: "none" }}
       ></textarea>
       <Button
@@ -43,14 +44,14 @@ export const Terminal = () => {
         !
       </Button>
       <Popover isOpen={isOpen} onClose={closeHandler}>
-        <div className="p-4 text-center">
+        <div className=" text-center">
           <h1 className="mb-6 text-3xl   font-bold">
             Welcome to my Terminal Interface
           </h1>
-          <p className={"mb-2 text-sm text-gray-primary"}>
+          <p className={" mb-2 text-sm text-gray-primary"}>
             To discover all available commands, simply type "
             <span className="font-bold text-white">help</span>" and press Enter.
-          </p>{" "}
+          </p>
           <p className={"mb-6 text-sm text-gray-primary"}>
             Kindly note that this demo showcases basic functionality; the
             complete feature set is currently in development.

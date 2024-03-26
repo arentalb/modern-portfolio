@@ -1,8 +1,6 @@
 import { NavLink, To } from "react-router-dom";
 import React, { ReactNode, useState } from "react";
-import { Toast } from "@/ui/common/Toast.tsx";
 import { motion } from "framer-motion";
-import { animateScroll } from "react-scroll";
 
 interface NavItemProps {
   to: To;
@@ -69,30 +67,6 @@ export function Header() {
   );
 }
 
-function NavItem({ to, children, icon }: NavItemProps) {
-  const scrollToSection = () => {
-    const options = {
-      duration: 8000,
-      smooth: true,
-    };
-    animateScroll.scrollToBottom(options);
-  };
-
-  return (
-    <li className="flex items-center">
-      <NavLink
-        to={to}
-        className={({ isActive }: { isActive: boolean }) =>
-          isActive ? "text-gray-primary" : undefined
-        }
-      >
-        {children}
-      </NavLink>
-      {icon && <img src={icon} alt={children as string} />}
-    </li>
-  );
-}
-
 function NavItems() {
   return (
     <>
@@ -108,19 +82,18 @@ function NavItems() {
   );
 }
 
-function TerminalIcon() {
-  const [showToast, setShowToast] = useState(false);
-
+function NavItem({ to, children, icon }: NavItemProps) {
   return (
-    <>
-      {showToast ? (
-        <Toast toggleHandler={() => setShowToast(false)}>
-          Not Available at this time
-        </Toast>
-      ) : (
-        ""
-      )}
-      <img src="/icons/termina.svg" alt="" onClick={() => setShowToast(true)} />
-    </>
+    <li className="flex items-center">
+      <NavLink
+        to={to}
+        className={({ isActive }: { isActive: boolean }) =>
+          isActive ? "text-gray-primary" : undefined
+        }
+      >
+        {children}
+      </NavLink>
+      {icon && <img src={icon} alt={children as string} />}
+    </li>
   );
 }

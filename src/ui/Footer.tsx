@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
-    <footer className="mx-auto  p-5 md:max-w-[1400px] ">
+    <footer className="mx-auto  max-w-[1400px] p-5 ">
       <div className={"mb-8"}>
         <BrightLine
           gradient={

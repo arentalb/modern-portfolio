@@ -59,8 +59,8 @@ export function ExperienceSection() {
 
 function Experiences() {
   return (
-    <TracingBeam className="px-6">
-      <div className=" relative mx-auto flex w-full flex-col gap-24 pt-4 antialiased">
+    <TracingBeam>
+      <div className="relative mx-auto ml-4 flex w-full flex-col gap-24 px-6 pt-4 antialiased">
         {ExperienceData.map((item) => (
           <Experience experience={item} key={item.title} />
         ))}
@@ -77,18 +77,14 @@ function Experience({ experience }: ExperienceComponentProps) {
   return (
     <div
       className={
-        "ml-4 flex w-full justify-between  rounded-3xl border-2 border-white px-6 py-8   sm:px-16  sm:py-14 "
+        " flex w-full justify-between  rounded-3xl border-2 border-white  p-8 sm:p-16 "
       }
     >
       <div>
-        <p className={"mb-16 text-2xl font-bold sm:mb-6 sm:text-3xl"}>
+        <p className={"mb-16 text-2xl  sm:mb-6 sm:text-3xl"}>
           {experience.title}
         </p>
-        <p
-          className={
-            "text-base text-gray-primary sm:mb-14 sm:text-lg sm:font-bold"
-          }
-        >
+        <p className={"text-base text-gray-primary sm:mb-14 sm:text-lg "}>
           {experience.date}
         </p>
         <p className={"hidden sm:block sm:max-w-[750px]"}>
@@ -97,7 +93,7 @@ function Experience({ experience }: ExperienceComponentProps) {
       </div>
       <div className={" flex min-w-6  max-w-8  items-end sm:items-start"}>
         <Link to={experience.link}>
-          <img src="/icons/externalLink.svg" alt="" />
+          <img src="/icons/externalLink.svg" alt="link for experiance detail" />
         </Link>
       </div>
     </div>

@@ -16,26 +16,20 @@ export function HeroSection() {
   return (
     <GridBackground>
       <RevealCenter>
-        <section className=" mx-auto flex flex-col    items-center justify-between  gap-20 px-5  pb-32 pt-8 sm:flex-row sm:pt-12 md:max-w-[1400px]  ">
+        <section className="mx-auto flex max-w-[1400px] flex-col items-center justify-between  gap-20 px-5  pb-32 pt-16 sm:flex-row  ">
           <div
             className={
-              "mt-8 flex flex-col items-center text-center sm:max-w-96 sm:items-start sm:text-start"
+              " z-50 max-w-[30rem] text-center font-bold sm:text-start"
             }
           >
-            <h1 className={"z-50 mb-6 text-5xl font-bold md:text-6xl"}>
+            <h1 className={" mb-6 text-5xl  md:text-6xl"}>
               Your Gateway to Innovation
             </h1>
-            <p
-              className={
-                " z-50 mb-14 text-sm font-bold text-gray-primary md:text-base"
-              }
-            >
+            <p className={"mb-14 text-sm  text-gray-primary md:text-base"}>
               Welcome to my world of creativity and code, where every line
               brings ideas to life.
             </p>
-            <Button onClick={collaborateHandler} className={"z-50"}>
-              Let's Collaborate
-            </Button>
+            <Button onClick={collaborateHandler}>Let's Collaborate</Button>
           </div>
           <Terminal />
         </section>
