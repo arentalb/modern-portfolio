@@ -1,6 +1,7 @@
 import { NavLink, To } from "react-router-dom";
 import React, { ReactNode, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useScrollBlocker } from "@/hooks/useScrollBlocker.tsx";
 
 interface NavItemProps {
   to: To;
@@ -10,39 +11,34 @@ interface NavItemProps {
 
 export function Header() {
   const [menu, setMenu] = useState(false);
+  useScrollBlocker(menu);
 
   function toggleMenu() {
     setMenu((prev) => !prev);
   }
 
+  const variant = {
+    open: { opacity: 1, rotate: 0 },
+    closed: { opacity: 1, rotate: 90 },
+  };
+
   return (
-    <motion.header
-      className="mx-auto p-5 md:max-w-[1400px]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div
-        className={`flex justify-between md:mb-0 ${menu ? "mb-10" : "mb-0"}`}
-      >
+    <header>
+      <div className={"flex justify-between p-5"}>
         <NavItem to={"/"}>
           <img src="/images/logo.svg" alt="Aren Logo" />
         </NavItem>
-        {menu ? (
-          <img
-            src="/icons/close.svg"
-            alt="Burger Menu"
-            onClick={toggleMenu}
-            className="h-8 w-8 cursor-pointer sm:hidden"
-          />
-        ) : (
-          <img
-            src="/icons/menu.svg"
-            alt="Burger Menu"
-            onClick={toggleMenu}
-            className="cursor-pointer sm:hidden"
-          />
-        )}
+
+        <motion.img
+          src={`/icons/${menu ? "close" : "menu"}.svg`}
+          onClick={toggleMenu}
+          alt={`/icons/${menu ? "Close Menu" : "Burger Menu"}.svg`}
+          className=" h-8  w-8  cursor-pointer  sm:hidden"
+          variants={variant}
+          initial="open"
+          animate={menu ? "closed" : "open"}
+          transition={{ duration: 0.4 }}
+        />
 
         <nav className="hidden w-full items-center justify-end text-2xl font-bold sm:flex">
           <ul className="flex items-center justify-end gap-10 text-lg">
@@ -50,20 +46,29 @@ export function Header() {
           </ul>
         </nav>
       </div>
-
-      <motion.nav
-        className={`flex w-full flex-col items-center justify-between text-2xl font-bold sm:hidden`}
-        initial={{ height: 0, opacity: 0 }}
-        animate={
-          menu ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
-        }
-        transition={{ duration: 0.5 }}
-      >
-        <ul className="flex flex-col items-center gap-10">
-          <NavItems />
-        </ul>
-      </motion.nav>
-    </motion.header>
+      <AnimatePresence>
+        {menu ? (
+          <motion.nav
+            className={`fixed z-[100] flex h-screen w-screen flex-col items-center justify-between bg-black pt-32 text-2xl font-bold sm:hidden`}
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-100%" }}
+            transition={{ duration: 0.4 }}
+          >
+            <motion.ul
+              className="flex h-screen flex-col items-center gap-14"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <NavItems />
+            </motion.ul>
+          </motion.nav>
+        ) : (
+          ""
+        )}
+      </AnimatePresence>
+    </header>
   );
 }
 

@@ -1,16 +1,8 @@
-import { useEffect } from "react";
+import { useScrollBlocker } from "@/hooks/useScrollBlocker.tsx";
 
 export function Popover({ isOpen, onClose, children }) {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
+  useScrollBlocker(isOpen);
+
   return (
     <>
       {isOpen && (
