@@ -1,4 +1,4 @@
-import { BrightLine } from "@/ui/common/BrightLine.tsx";
+import { BrightLine } from "@/components/common/BrightLine.tsx";
 import { Link } from "react-router-dom";
 
 export function Footer() {

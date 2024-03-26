@@ -1,7 +1,7 @@
-import { Button } from "@/ui/ui/button.tsx";
+import { Button } from "@/components/common/ui/button.tsx";
 import { Link } from "react-router-dom";
-import { MovingCards } from "@/ui/aceternity/MovingCards.tsx";
-import { RevealCenter } from "@/ui/animations/RevealCenter.tsx";
+import { MovingCards } from "@/components/aceternity/MovingCards.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 interface ProjectProp {
   title: string;

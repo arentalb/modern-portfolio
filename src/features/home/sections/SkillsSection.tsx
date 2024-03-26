@@ -1,5 +1,5 @@
-import { AnimatedSkills } from "@/ui/aceternity/AnimatedSkills.tsx";
-import { RevealCenter } from "@/ui/animations/RevealCenter.tsx";
+import { AnimatedSkills } from "@/components/aceternity/AnimatedSkills.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 interface SkillProps {
   id: number;

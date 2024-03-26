@@ -1,9 +1,9 @@
-import { Button } from "@/ui/ui/button.tsx";
-import { Input } from "@/ui/ui/input.tsx";
-import { Textarea } from "@/ui/ui/textarea.tsx";
+import { Button } from "@/components/common/ui/button.tsx";
+import { Input } from "@/components/common/ui/input.tsx";
+import { Textarea } from "@/components/common/ui/textarea.tsx";
 import { FormspreeProvider, useForm } from "@formspree/react";
 import { useRef } from "react";
-import { RevealCenter } from "@/ui/animations/RevealCenter.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 export function CallToAction() {
   const [form, setForm] = useForm("xeqyzylo");

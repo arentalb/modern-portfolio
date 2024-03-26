@@ -1,5 +1,5 @@
 import CountUp from "react-countup";
-import { RevealCenter } from "@/ui/animations/RevealCenter.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 interface StatisticProps {
   StatisticName: string;

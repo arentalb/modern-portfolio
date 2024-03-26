@@ -1,5 +1,5 @@
-import { Header } from "@/ui/Header.tsx";
-import { ComingSoon } from "@/ui/aceternity/ComingSoon.tsx";
+import { Header } from "@/components/Header.tsx";
+import { ComingSoon } from "@/components/aceternity/ComingSoon.tsx";
 
 export function CoursePage() {
   return (

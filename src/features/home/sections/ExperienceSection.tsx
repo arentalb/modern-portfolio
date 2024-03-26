@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"; // import { calsans } from "@/fonts/calsans";
-import { TracingBeam } from "@/ui/aceternity/TracingBeam.tsx";
-import { RevealCenter } from "@/ui/animations/RevealCenter.tsx";
+import { TracingBeam } from "@/components/aceternity/TracingBeam.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 interface ExperienceProp {
   title: string;
