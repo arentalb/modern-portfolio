@@ -1,4 +1,4 @@
-import { LevelList } from "@/components/LevelList.tsx";
+import { LevelList } from "@/features/projects/LevelList.tsx";
 import { Link } from "react-router-dom";
 
 export function Project({ project }) {

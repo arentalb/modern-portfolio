@@ -7,6 +7,7 @@ import { CertificatePage } from "@/pages/CertificatePage.tsx";
 import { TerminalProvider } from "@/context/TerminalContext.tsx";
 import { ProjectsPage } from "@/pages/ProjectsPage.tsx";
 import { ExperiencePage } from "@/pages/ExperiencePage.tsx";
+import { ProjectDetailPage } from "@/pages/ProjectDetailPage.tsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           {/*<Route path={""} element={<HomePage />} />*/}
           <Route path={""} element={<HomePage />} />
           <Route path={"/projects"} element={<ProjectsPage />} />
+          <Route path={"/project/:id"} element={<ProjectDetailPage />} />
           <Route path={"/experience"} element={<ExperiencePage />} />
           <Route path={"/article"} element={<ArticlePage />} />
           {/*<Route path={"/tutorial"} element={<TutorialPage />} />*/}
