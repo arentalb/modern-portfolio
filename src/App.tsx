@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import { NotFoundPage } from "@/pages/NotFoundPage.tsx";
 import { ArticlePage } from "@/pages/ArticlePage.tsx";
 import { HomePage } from "@/pages/HomePage.tsx";
@@ -9,6 +9,9 @@ import { ProjectsPage } from "@/pages/ProjectsPage.tsx";
 import { ExperiencePage } from "@/pages/ExperiencePage.tsx";
 import { ProjectDetailPage } from "@/pages/ProjectDetailPage.tsx";
 import { LoginPage } from "@/pages/LoginPage.tsx";
+import { AdminPage } from "@/pages/admin/AdminPage.tsx";
+import { TechnologiesAdminPage } from "@/pages/admin/TechnologiesAdminPage.tsx";
+import { SettingAdminPage } from "@/pages/admin/SettingAdminPage.tsx";
 
 function App() {
   return (
@@ -25,6 +28,14 @@ function App() {
           {/*<Route path={"/course"} element={<CoursePage />} />*/}
           <Route path={"/certificates"} element={<CertificatePage />} />
           <Route path={"/login"} element={<LoginPage />} />
+          <Route
+            path="/admin"
+            element={<Navigate to="/admin/technologies" />}
+          />
+          <Route path="/admin" element={<AdminPage />}>
+            <Route path="technologies" element={<TechnologiesAdminPage />} />
+            <Route path="settings" element={<SettingAdminPage />} />
+          </Route>
           <Route path={"*"} element={<NotFoundPage />} />
         </Routes>
       </TerminalProvider>
