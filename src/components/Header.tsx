@@ -23,8 +23,8 @@ export function Header() {
   };
 
   return (
-    <header>
-      <div className={"flex justify-between p-5"}>
+    <header className={" mx-auto max-w-[1400px]  p-5"}>
+      <div className={"flex justify-between"}>
         <NavItem to={"/"}>
           <img src="/images/logo.svg" alt="Aren Logo" />
         </NavItem>
