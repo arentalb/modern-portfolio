@@ -8,6 +8,7 @@ import { TerminalProvider } from "@/context/TerminalContext.tsx";
 import { ProjectsPage } from "@/pages/ProjectsPage.tsx";
 import { ExperiencePage } from "@/pages/ExperiencePage.tsx";
 import { ProjectDetailPage } from "@/pages/ProjectDetailPage.tsx";
+import { LoginPage } from "@/pages/LoginPage.tsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           {/*<Route path={"/tutorial"} element={<TutorialPage />} />*/}
           {/*<Route path={"/course"} element={<CoursePage />} />*/}
           <Route path={"/certificates"} element={<CertificatePage />} />
+          <Route path={"/login"} element={<LoginPage />} />
           <Route path={"*"} element={<NotFoundPage />} />
         </Routes>
       </TerminalProvider>
