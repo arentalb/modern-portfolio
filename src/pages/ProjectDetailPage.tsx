@@ -5,8 +5,9 @@ import { ProjectDetailDescriptionSection } from "@/features/projects/project det
 import { ProjectsDetailsSection } from "@/features/projects/project detail sections/ProjectsDetailsSection.tsx";
 import { BrightLine } from "@/components/common/BrightLine.tsx";
 import { useParams } from "react-router";
+import { ProjectInterface } from "@/types/ProjectInterface.ts";
 
-const data = [
+const data: ProjectInterface[] = [
   {
     id: 1,
     title: "Personal Portfolio",

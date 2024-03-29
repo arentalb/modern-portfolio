@@ -1,9 +1,9 @@
 import supabase, { supabaseUrl } from "@/services/supabase.ts";
-import { Technology } from "@/types/Technology.ts";
+import { TechnologyInterface } from "@/types/TechnologyInterface.ts";
 import { PostgrestResponse } from "@supabase/supabase-js";
 
-export async function getAllTechnologiesAPI(): Promise<Technology[]> {
-  const { data, error }: PostgrestResponse<Technology> = await supabase
+export async function getAllTechnologiesAPI(): Promise<TechnologyInterface[]> {
+  const { data, error }: PostgrestResponse<TechnologyInterface> = await supabase
     .from("Technology")
     .select("*");
   if (error) {
@@ -12,7 +12,9 @@ export async function getAllTechnologiesAPI(): Promise<Technology[]> {
   return data;
 }
 
-export async function createTechnologyAPI(newTechnologyData: Technology) {
+export async function createTechnologyAPI(
+  newTechnologyData: TechnologyInterface,
+) {
   if (!newTechnologyData.image || newTechnologyData.image.length === 0) {
     throw new Error("There is no image with tha data ");
   }
@@ -21,7 +23,7 @@ export async function createTechnologyAPI(newTechnologyData: Technology) {
     newTechnologyData.image[0].name,
   );
 
-  const technology: Technology = {
+  const technology: TechnologyInterface = {
     name: newTechnologyData.name,
     imgURL: imagePath,
     isSkill: newTechnologyData.isSkill,
@@ -48,7 +50,7 @@ export async function createTechnologyAPI(newTechnologyData: Technology) {
 
 export async function updateTechnologyAPI(
   id: string | number,
-  technology: Technology,
+  technology: TechnologyInterface,
 ) {
   let updateObject = { ...technology };
   let generatedImageName = null;
@@ -62,7 +64,7 @@ export async function updateTechnologyAPI(
     return;
   }
 
-  const { data, error }: PostgrestResponse<Technology> = await supabase
+  const { data, error }: PostgrestResponse<TechnologyInterface> = await supabase
     .from("Technology")
     .update(updateObject)
     .eq("id", id)

@@ -2,8 +2,13 @@ import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { Button } from "@/components/common/ui/button.tsx";
 import { LevelList } from "@/features/projects/LevelList.tsx";
 import { Link } from "react-router-dom";
+import { ProjectInterface } from "@/types/ProjectInterface.ts";
 
-export function ProjectDetailHeroSection({ project }) {
+export function ProjectDetailHeroSection({
+  project,
+}: {
+  project: ProjectInterface;
+}) {
   return (
     <RevealCenter>
       <section className="mx-auto max-w-[1400px] px-5 py-20 sm:px-5 sm:py-32">

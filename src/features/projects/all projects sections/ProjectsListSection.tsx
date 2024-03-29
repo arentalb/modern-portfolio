@@ -1,9 +1,10 @@
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { Input } from "@/components/common/ui/input.tsx";
 import { Button } from "@/components/common/ui/button.tsx";
+import { ProjectInterface } from "@/types/ProjectInterface.ts";
 import { Project } from "@/features/projects/Project.tsx";
 
-const data = [
+const data: ProjectInterface[] = [
   {
     id: 1,
     title: "Personal Portfolio",
@@ -14,9 +15,45 @@ const data = [
     level: "Beginner",
     link: "/project/1",
     imageURL: "/projects/project1.svg",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    libraries: ["Bootstrap"],
-    repository: ["https://github.com/your-username/personal-portfolio"],
+    technologies: [
+      {
+        name: "HTML",
+        link: "https://",
+      },
+      {
+        name: "CSS",
+        link: "https://",
+      },
+      {
+        name: "JavaScript",
+        link: "https://",
+      },
+      {
+        name: "Node.js",
+        link: "https://",
+      },
+      {
+        name: "Express.js",
+        link: "https://",
+      },
+    ],
+    libraries: [
+      {
+        name: "Stripe",
+        link: "https://",
+      },
+      {
+        name: "ladash",
+        link: "https://",
+      },
+    ],
+    repository: [
+      {
+        name: "Front End",
+        link: "https://github.com/your-username/mini-ecommerce",
+      },
+    ],
+    liveLink: "https://github.com/your-username/mini-ecommerce",
   },
   {
     id: 2,
@@ -28,9 +65,45 @@ const data = [
     level: "Intermediate",
     link: "/project/2",
     imageURL: "/projects/project2.svg",
-    technologies: ["React", "JavaScript", "CSS"],
-    libraries: ["Axios", "Moment.js"],
-    repository: ["https://github.com/your-username/weather-app"],
+    technologies: [
+      {
+        name: "HTML",
+        link: "https://",
+      },
+      {
+        name: "CSS",
+        link: "https://",
+      },
+      {
+        name: "JavaScript",
+        link: "https://",
+      },
+      {
+        name: "Node.js",
+        link: "https://",
+      },
+      {
+        name: "Express.js",
+        link: "https://",
+      },
+    ],
+    libraries: [
+      {
+        name: "Stripe",
+        link: "https://",
+      },
+      {
+        name: "ladash",
+        link: "https://",
+      },
+    ],
+    repository: [
+      {
+        name: "Front End",
+        link: "https://github.com/your-username/mini-ecommerce",
+      },
+    ],
+    liveLink: "https://github.com/your-username/mini-ecommerce",
   },
   {
     id: 3,
@@ -42,9 +115,45 @@ const data = [
     level: "Intermediate",
     link: "/project/3",
     imageURL: "/projects/project3.svg",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery"],
-    libraries: ["OpenTable Integration", "Lightbox"],
-    repository: ["https://github.com/your-username/restaurant-website"],
+    technologies: [
+      {
+        name: "HTML",
+        link: "https://",
+      },
+      {
+        name: "CSS",
+        link: "https://",
+      },
+      {
+        name: "JavaScript",
+        link: "https://",
+      },
+      {
+        name: "Node.js",
+        link: "https://",
+      },
+      {
+        name: "Express.js",
+        link: "https://",
+      },
+    ],
+    libraries: [
+      {
+        name: "Stripe",
+        link: "https://",
+      },
+      {
+        name: "ladash",
+        link: "https://",
+      },
+    ],
+    repository: [
+      {
+        name: "Front End",
+        link: "https://github.com/your-username/mini-ecommerce",
+      },
+    ],
+    liveLink: "https://github.com/your-username/mini-ecommerce",
   },
   {
     id: 4,
@@ -56,9 +165,45 @@ const data = [
     level: "Advanced",
     link: "/project/4",
     imageURL: "/projects/project4.svg",
-    technologies: ["JavaScript", "React"],
-    libraries: ["Trivia API"],
-    repository: ["https://github.com/your-username/quiz-game"],
+    technologies: [
+      {
+        name: "HTML",
+        link: "https://",
+      },
+      {
+        name: "CSS",
+        link: "https://",
+      },
+      {
+        name: "JavaScript",
+        link: "https://",
+      },
+      {
+        name: "Node.js",
+        link: "https://",
+      },
+      {
+        name: "Express.js",
+        link: "https://",
+      },
+    ],
+    libraries: [
+      {
+        name: "Stripe",
+        link: "https://",
+      },
+      {
+        name: "ladash",
+        link: "https://",
+      },
+    ],
+    repository: [
+      {
+        name: "Front End",
+        link: "https://github.com/your-username/mini-ecommerce",
+      },
+    ],
+    liveLink: "https://github.com/your-username/mini-ecommerce",
   },
   {
     id: 5,
@@ -70,9 +215,45 @@ const data = [
     level: "Advanced",
     link: "/project/5",
     imageURL: "/projects/project1.svg",
-    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js"],
-    libraries: ["Stripe", "lodash"],
-    repository: ["https://github.com/your-username/mini-ecommerce"],
+    technologies: [
+      {
+        name: "HTML",
+        link: "https://",
+      },
+      {
+        name: "CSS",
+        link: "https://",
+      },
+      {
+        name: "JavaScript",
+        link: "https://",
+      },
+      {
+        name: "Node.js",
+        link: "https://",
+      },
+      {
+        name: "Express.js",
+        link: "https://",
+      },
+    ],
+    libraries: [
+      {
+        name: "Stripe",
+        link: "https://",
+      },
+      {
+        name: "ladash",
+        link: "https://",
+      },
+    ],
+    repository: [
+      {
+        name: "Front End",
+        link: "https://github.com/your-username/mini-ecommerce",
+      },
+    ],
+    liveLink: "https://github.com/your-username/mini-ecommerce",
   },
 ];
 

@@ -1,4 +1,4 @@
-export function LevelList({ level }) {
+export function LevelList({ level }: { level: string }) {
   let levelList: JSX.Element = <div></div>;
 
   switch (level) {
@@ -36,6 +36,6 @@ export function LevelList({ level }) {
   return <div className={"flex gap-2"}>{levelList}</div>;
 }
 
-function Level({ color }) {
+function Level({ color }: { color: string }) {
   return <div className={`h-4 w-4 rounded-full ${color}`}></div>;
 }

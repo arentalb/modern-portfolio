@@ -1,6 +1,11 @@
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
+import { ProjectInterface } from "@/types/ProjectInterface.ts";
 
-export function ProjectDetailDescriptionSection({ project }) {
+export function ProjectDetailDescriptionSection({
+  project,
+}: {
+  project: ProjectInterface;
+}) {
   return (
     <RevealCenter>
       <section className="mx-auto max-w-[1400px] px-5 pt-20 sm:px-5 sm:pt-20">
