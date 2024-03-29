@@ -1,11 +1,11 @@
 import { useMutation, useQueryClient } from "react-query";
-import { editTechnologyAPI } from "@/services/apiTechnologies.ts";
+import { updateTechnologyAPI } from "@/services/apiTechnologies.ts";
 
 export function useEditTechnology() {
   const queryClient = useQueryClient();
 
   const { mutate: editTechnology, isLoading: isEditing } = useMutation({
-    mutationFn: ({ id, data }) => editTechnologyAPI(id, data),
+    mutationFn: ({ id, data }) => updateTechnologyAPI(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["technologies"],
