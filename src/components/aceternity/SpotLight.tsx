@@ -1,6 +1,11 @@
 import { cn } from "@/utils/utils.ts";
 
-export const Spotlight = ({ className, fill }) => {
+interface SpotlightProps {
+  className?: string;
+  fill?: string;
+}
+
+export const Spotlight = ({ className, fill }: SpotlightProps) => {
   return (
     <svg
       className={cn(

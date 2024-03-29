@@ -17,7 +17,7 @@ export function RevealCenter({ children, delay = 0 }: RevealCenterProps) {
         mainControl.start("visible");
       }
     },
-    [isInView],
+    [isInView, mainControl],
   );
   return (
     <div ref={ref}>

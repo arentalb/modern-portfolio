@@ -1,6 +1,6 @@
 import { SparklesCore } from "@/components/aceternity/Sparkles.tsx";
 
-export function ComingSoon({ text }) {
+export function ComingSoon({ text }: { text: string }) {
   return (
     <section className=" mx-auto flex  flex-col items-center justify-between gap-20 px-5 pb-32 pt-8 sm:flex-row sm:pt-12 md:max-w-[1400px] ">
       <div
@@ -21,7 +21,7 @@ export function ComingSoon({ text }) {
 
           {/* Core component */}
           <SparklesCore
-            background="transparent"
+            background={"transparent"}
             minSize={0.4}
             maxSize={1}
             particleDensity={1200}

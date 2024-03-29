@@ -1,5 +1,5 @@
 import { NavLink, To } from "react-router-dom";
-import React, { ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useScrollBlocker } from "@/hooks/useScrollBlocker.tsx";
 
