@@ -13,33 +13,44 @@ import { AdminPage } from "@/pages/admin/AdminPage.tsx";
 import { TechnologiesAdminPage } from "@/pages/admin/TechnologiesAdminPage.tsx";
 import { SettingAdminPage } from "@/pages/admin/SettingAdminPage.tsx";
 
+import { QueryClient, QueryClientProvider } from "react-query";
+
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 60 * 1000,
+      },
+    },
+  });
   return (
-    <BrowserRouter>
-      <TerminalProvider>
-        <Routes>
-          {/*<Route path={""} element={<HomePage />} />*/}
-          <Route path={""} element={<HomePage />} />
-          <Route path={"/projects"} element={<ProjectsPage />} />
-          <Route path={"/project/:id"} element={<ProjectDetailPage />} />
-          <Route path={"/experience"} element={<ExperiencePage />} />
-          <Route path={"/article"} element={<ArticlePage />} />
-          {/*<Route path={"/tutorial"} element={<TutorialPage />} />*/}
-          {/*<Route path={"/course"} element={<CoursePage />} />*/}
-          <Route path={"/certificates"} element={<CertificatePage />} />
-          <Route path={"/login"} element={<LoginPage />} />
-          <Route
-            path="/admin"
-            element={<Navigate to="/admin/technologies" />}
-          />
-          <Route path="/admin" element={<AdminPage />}>
-            <Route path="technologies" element={<TechnologiesAdminPage />} />
-            <Route path="settings" element={<SettingAdminPage />} />
-          </Route>
-          <Route path={"*"} element={<NotFoundPage />} />
-        </Routes>
-      </TerminalProvider>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <TerminalProvider>
+          <Routes>
+            {/*<Route path={""} element={<HomePage />} />*/}
+            <Route path={""} element={<HomePage />} />
+            <Route path={"/projects"} element={<ProjectsPage />} />
+            <Route path={"/project/:id"} element={<ProjectDetailPage />} />
+            <Route path={"/experience"} element={<ExperiencePage />} />
+            <Route path={"/article"} element={<ArticlePage />} />
+            {/*<Route path={"/tutorial"} element={<TutorialPage />} />*/}
+            {/*<Route path={"/course"} element={<CoursePage />} />*/}
+            <Route path={"/certificates"} element={<CertificatePage />} />
+            <Route path={"/login"} element={<LoginPage />} />
+            <Route
+              path="/admin"
+              element={<Navigate to="/admin/technologies" />}
+            />
+            <Route path="/admin" element={<AdminPage />}>
+              <Route path="technologies" element={<TechnologiesAdminPage />} />
+              <Route path="settings" element={<SettingAdminPage />} />
+            </Route>
+            <Route path={"*"} element={<NotFoundPage />} />
+          </Routes>
+        </TerminalProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

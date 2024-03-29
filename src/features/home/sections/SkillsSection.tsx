@@ -1,5 +1,8 @@
 import { AnimatedSkills } from "@/components/aceternity/AnimatedSkills.tsx";
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
+import { useGetTechnologies } from "@/features/admin/Technologies/useGetTechnologies.ts";
+import { Loading } from "@/components/Loading.tsx";
+import { Error } from "@/components/Error.tsx";
 
 interface SkillProps {
   id: number;
@@ -26,6 +29,9 @@ const skillsData: SkillProps[] = [
 ];
 
 export function SkillsSection() {
+  const { technologies, isLoading, error } = useGetTechnologies();
+
+  console.log(technologies);
   return (
     <RevealCenter delay={0.3}>
       <section className="mx-auto max-w-[1400px] px-5 py-32  text-center  ">
@@ -42,7 +48,13 @@ export function SkillsSection() {
           </p>
           <div className={"flex justify-center"}>
             <div className="flex flex-wrap justify-center gap-8  md:gap-16">
-              <AnimatedSkills items={skillsData} />
+              {isLoading && <Loading />}
+              {error && <Error message={error} />}
+              {technologies && (
+                <AnimatedSkills
+                  items={technologies?.filter((item) => item.isSkill)}
+                />
+              )}
             </div>
           </div>
         </div>
