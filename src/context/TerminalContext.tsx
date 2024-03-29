@@ -1,10 +1,21 @@
-import { createContext, useContext, useRef, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  RefObject,
+  useContext,
+  useRef,
+  useState,
+} from "react";
 import { useNavigate } from "react-router";
 
-const terminalContext = createContext();
+interface TerminalContextType {}
 
-function TerminalProvider({ children }) {
-  const textareaRef = useRef();
+const terminalContext = createContext<TerminalContextType | undefined>(
+  undefined,
+);
+
+function TerminalProvider({ children }: { children: ReactNode }) {
+  const textareaRef: RefObject<HTMLTextAreaElement> = useRef(null);
   const navigate = useNavigate();
   const [state, setState] = useState(() => {
     let path = location.pathname;
@@ -21,7 +32,7 @@ function TerminalProvider({ children }) {
     };
   });
 
-  function writeCommand(value) {
+  function writeCommand(value: string): void {
     const prefix = state.root;
 
     if (getLastLine().startsWith(prefix)) {
@@ -39,7 +50,7 @@ function TerminalProvider({ children }) {
     }
   }
 
-  function runCommand() {
+  function runCommand(): void {
     const lastLineCommand = getLastLine();
     const dollarIndex = lastLineCommand.indexOf("$");
     if (dollarIndex !== -1) {
@@ -48,7 +59,7 @@ function TerminalProvider({ children }) {
     }
   }
 
-  function processCommand(requestedCommand) {
+  function processCommand(requestedCommand: string): void {
     const commandParts = requestedCommand.split(" ");
 
     switch (commandParts[0].trim()) {
@@ -158,7 +169,7 @@ function TerminalProvider({ children }) {
     });
   }
 
-  function terminalLog(message, color = "white") {
+  function terminalLog(message: string, color: string = "white"): void {
     const commandHistory = `${state.command.path}${message}${state.root}`;
 
     setState((prevState) => {
@@ -174,8 +185,12 @@ function TerminalProvider({ children }) {
   }
 
   function getLastLine() {
-    const lines = textareaRef.current.value.split("\n");
-    return lines[lines.length - 1];
+    if (textareaRef.current !== null) {
+      const lines = textareaRef.current.value.split("\n");
+      return lines[lines.length - 1];
+    } else {
+      return "";
+    }
   }
 
   return (
