@@ -10,8 +10,8 @@ import { ExperiencePage } from "@/pages/ExperiencePage.tsx";
 import { ProjectDetailPage } from "@/pages/ProjectDetailPage.tsx";
 import { LoginPage } from "@/pages/LoginPage.tsx";
 import { AdminPage } from "@/pages/admin/AdminPage.tsx";
-import { TechnologiesAdminPage } from "@/pages/admin/TechnologiesAdminPage.tsx";
-import { SettingAdminPage } from "@/pages/admin/SettingAdminPage.tsx";
+import { TechnologiesAdminPage } from "@/pages/admin/AdminTechnologiesPage.tsx";
+import { AdminSettingPage } from "@/pages/admin/AdminSettingPage.tsx";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -44,7 +44,7 @@ function App() {
             />
             <Route path="/admin" element={<AdminPage />}>
               <Route path="technologies" element={<TechnologiesAdminPage />} />
-              <Route path="settings" element={<SettingAdminPage />} />
+              <Route path="settings" element={<AdminSettingPage />} />
             </Route>
             <Route path={"*"} element={<NotFoundPage />} />
           </Routes>

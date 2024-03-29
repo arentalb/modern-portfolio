@@ -1,4 +1,4 @@
-export function SettingAdminPage() {
+export function AdminSettingPage() {
   return (
     <div>
       <h1 className={"text-4xl"}>Settings</h1>
