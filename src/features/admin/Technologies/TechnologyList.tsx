@@ -1,17 +1,17 @@
 import { useGetTechnologies } from "@/features/admin/Technologies/useGetTechnologies.ts";
 import { Loading } from "@/components/Loading.tsx";
-import { Error } from "@/components/Error.tsx";
 import { TechnologyForm } from "@/features/admin/Technologies/TechnelogyForm.tsx";
 import { useState } from "react";
+import { TechnologyInterface } from "@/types/TechnologyInterface.ts";
 
 export function TechnologyList() {
-  const { technologies, isLoading, error } = useGetTechnologies();
-  const [technologySelected, setTechnologySelected] = useState(null);
+  const { technologies, isLoading } = useGetTechnologies();
+  const [technologySelected, setTechnologySelected] =
+    useState<TechnologyInterface>();
   return (
     <div>
       <div className={"flex flex-wrap gap-10 pt-20"}>
         {isLoading && <Loading />}
-        {error && <Error message={error} />}
         {technologies && (
           <>
             {technologies.map((skill) => (
@@ -31,7 +31,13 @@ export function TechnologyList() {
   );
 }
 
-function Skill({ skill, select }) {
+function Skill({
+  skill,
+  select,
+}: {
+  skill: TechnologyInterface;
+  select: (skill: TechnologyInterface) => void;
+}) {
   return (
     <div
       onClick={() => select(skill)}

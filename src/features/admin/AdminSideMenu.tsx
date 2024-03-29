@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { ReactNode } from "react";
 
 export function AdminSideMenu() {
   return (
@@ -12,7 +13,12 @@ export function AdminSideMenu() {
   );
 }
 
-function MenuLink({ destination, children }) {
+interface MenuLinkProps {
+  destination: string;
+  children: ReactNode;
+}
+
+function MenuLink({ destination, children }: MenuLinkProps) {
   return (
     <NavLink
       className={({ isActive }: { isActive: boolean }) =>

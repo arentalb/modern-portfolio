@@ -1,14 +1,11 @@
 import { useQuery } from "react-query";
 import { getAllTechnologiesAPI } from "@/services/apiTechnologies.ts";
+import { TechnologyInterface } from "@/types/TechnologyInterface.ts";
 
 export function useGetTechnologies() {
-  const {
-    isLoading,
-    data: technologies,
-    error,
-  } = useQuery({
+  const { isLoading, data: technologies } = useQuery<TechnologyInterface[]>({
     queryKey: ["technologies"],
     queryFn: getAllTechnologiesAPI,
   });
-  return { technologies, isLoading, error };
+  return { technologies, isLoading };
 }

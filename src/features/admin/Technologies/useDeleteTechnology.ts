@@ -5,7 +5,7 @@ export function useDeleteTechnology() {
   const queryClient = useQueryClient();
 
   const { mutate: deleteTechnology, isLoading: isDeleting } = useMutation({
-    mutationFn: (id) => deleteTechnologyAPI(id),
+    mutationFn: (id: number) => deleteTechnologyAPI(id),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["technologies"],

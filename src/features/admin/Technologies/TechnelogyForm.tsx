@@ -6,6 +6,7 @@ import { Label } from "@/components/common/ui/label.tsx";
 import { useForm } from "react-hook-form";
 import { useEditTechnology } from "@/features/admin/Technologies/useEditTechnology.ts";
 import { useEffect } from "react";
+import { TechnologyInterface } from "@/types/TechnologyInterface.ts";
 
 type FormFields = {
   name: string;
@@ -13,7 +14,15 @@ type FormFields = {
   isSkill: boolean;
 };
 
-export function TechnologyForm({ mode = "normal", technology = null }) {
+interface TechnologyFormProps {
+  mode?: string;
+  technology?: TechnologyInterface | null;
+}
+
+export function TechnologyForm({
+  mode = "normal",
+  technology = null,
+}: TechnologyFormProps) {
   const { isCreating, createTechnology } = useCreateTechnology();
   const { isDeleting, deleteTechnology } = useDeleteTechnology();
   const { isEditing, editTechnology } = useEditTechnology();
@@ -38,21 +47,28 @@ export function TechnologyForm({ mode = "normal", technology = null }) {
   }
 
   function editHandler(data: FormFields) {
-    let newTech = {};
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    let newTech: TechnologyInterface = {};
     if (data.image.length > 0) {
-      newTech = { ...newTech, image: data.image[0] };
+      newTech = { ...newTech, image: data.image };
     }
-    if (technology.name !== data.name) {
+    if (technology?.name !== data.name) {
       newTech = { ...newTech, name: data.name };
     }
-    if (technology.isSkill !== data.isSkill) {
+    if (technology?.isSkill !== data.isSkill) {
       newTech = { ...newTech, isSkill: data.isSkill };
     }
-    editTechnology({ id: technology.id, data: newTech });
+    console.log("====");
+    console.log(technology?.id);
+    console.log(technology?.id || -1);
+    editTechnology({ id: technology?.id || -1, data: newTech });
   }
 
   function deleteHandler() {
-    deleteTechnology(technology.id);
+    if (technology && technology.id) {
+      deleteTechnology(technology.id);
+    }
   }
 
   return (

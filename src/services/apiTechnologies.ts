@@ -52,16 +52,17 @@ export async function updateTechnologyAPI(
   id: string | number,
   technology: TechnologyInterface,
 ) {
+  console.log("updateTechnologyAPI");
+  console.log(technology);
+
   let updateObject = { ...technology };
   let generatedImageName = null;
+
   if (technology.image) {
     const { image, ...remainingFields } = technology;
     const { imageName, imagePath } = generateImageNameAndPath(image[0].name);
     updateObject = { ...remainingFields, imgURL: imagePath };
     generatedImageName = imageName;
-  }
-  if (!technology.image || technology.image.length === 0) {
-    return;
   }
 
   const { data, error }: PostgrestResponse<TechnologyInterface> = await supabase
@@ -71,7 +72,9 @@ export async function updateTechnologyAPI(
     .select();
   console.log(data);
   console.log(error);
-
+  if (!technology.image || technology.image.length === 0) {
+    return;
+  }
   if (generatedImageName !== null) {
     const { error: storageError } = await supabase.storage
       .from("Technology")
