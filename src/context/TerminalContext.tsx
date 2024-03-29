@@ -8,7 +8,20 @@ import {
 } from "react";
 import { useNavigate } from "react-router";
 
-interface TerminalContextType {}
+interface TerminalContextType {
+  state: TerminalState;
+  writeCommand: (value: string) => void;
+  runCommand: () => void;
+  textareaRef: RefObject<HTMLTextAreaElement>;
+}
+
+interface TerminalState {
+  root: string;
+  command: {
+    path: string;
+    color: string;
+  };
+}
 
 const terminalContext = createContext<TerminalContextType | undefined>(
   undefined,
@@ -17,7 +30,7 @@ const terminalContext = createContext<TerminalContextType | undefined>(
 function TerminalProvider({ children }: { children: ReactNode }) {
   const textareaRef: RefObject<HTMLTextAreaElement> = useRef(null);
   const navigate = useNavigate();
-  const [state, setState] = useState(() => {
+  const [state, setState] = useState<TerminalState>(() => {
     let path = location.pathname;
     if (path === "/") {
       path = "";

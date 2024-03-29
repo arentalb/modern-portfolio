@@ -1,6 +1,13 @@
 import { useScrollBlocker } from "@/hooks/useScrollBlocker.tsx";
+import { ReactNode } from "react";
 
-export function Popover({ isOpen, onClose, children }) {
+interface PopoverProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: ReactNode;
+}
+
+export function Popover({ isOpen, onClose, children }: PopoverProps) {
   useScrollBlocker(isOpen);
 
   return (
