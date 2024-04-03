@@ -6,7 +6,7 @@ import { Label } from "@/components/common/ui/label.tsx";
 import { useForm } from "react-hook-form";
 import { useEditTechnology } from "@/features/admin/Technologies/useEditTechnology.ts";
 import { useEffect } from "react";
-import { TechnologyInterface } from "@/types/TechnologyInterface.ts";
+import { TTechnology } from "@/types/Technology.types.ts";
 
 type FormFields = {
   name: string;
@@ -16,7 +16,7 @@ type FormFields = {
 
 interface TechnologyFormProps {
   mode?: string;
-  technology?: TechnologyInterface | null;
+  technology?: TTechnology | null;
 }
 
 export function TechnologyForm({
@@ -49,7 +49,7 @@ export function TechnologyForm({
   function editHandler(data: FormFields) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
-    let newTech: TechnologyInterface = {};
+    let newTech: TTechnology = {};
     if (data.image.length > 0) {
       newTech = { ...newTech, image: data.image };
     }

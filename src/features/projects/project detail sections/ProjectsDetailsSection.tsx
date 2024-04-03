@@ -1,12 +1,8 @@
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { Link } from "react-router-dom";
-import { ProjectInterface, StackType } from "@/types/ProjectInterface.ts";
+import { ProjectTypes, TStack } from "@/types/Project.types.ts";
 
-export function ProjectsDetailsSection({
-  project,
-}: {
-  project: ProjectInterface;
-}) {
+export function ProjectsDetailsSection({ project }: { project: ProjectTypes }) {
   return (
     <RevealCenter>
       <section className="mx-auto max-w-[1400px] px-5 py-20 sm:px-5 sm:py-32">
@@ -20,13 +16,7 @@ export function ProjectsDetailsSection({
   );
 }
 
-export function Detail({
-  items,
-  title,
-}: {
-  items: StackType[];
-  title: string;
-}) {
+export function Detail({ items, title }: { items: TStack[]; title: string }) {
   return (
     <RevealCenter>
       <div className={"flex flex-col justify-between font-bold"}>
@@ -41,7 +31,7 @@ export function Detail({
   );
 }
 
-function Label({ item }: { item: StackType }) {
+function Label({ item }: { item: TStack }) {
   return (
     <div
       className={

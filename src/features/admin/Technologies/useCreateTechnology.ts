@@ -1,12 +1,12 @@
 import { useMutation, useQueryClient } from "react-query";
 import { createTechnologyAPI } from "@/services/apiTechnologies.ts";
-import { TechnologyInterface } from "@/types/TechnologyInterface.ts";
+import { TTechnology } from "@/types/Technology.types.ts";
 
 export function useCreateTechnology() {
   const queryClient = useQueryClient();
 
   const { mutate: createTechnology, isLoading: isCreating } = useMutation({
-    mutationFn: (data: TechnologyInterface) => createTechnologyAPI(data),
+    mutationFn: (data: TTechnology) => createTechnologyAPI(data),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["technologies"],

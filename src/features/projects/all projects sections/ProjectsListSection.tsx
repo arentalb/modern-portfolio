@@ -1,10 +1,10 @@
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { Input } from "@/components/common/ui/input.tsx";
 import { Button } from "@/components/common/ui/button.tsx";
-import { ProjectInterface } from "@/types/ProjectInterface.ts";
+import { ProjectTypes } from "@/types/Project.types.ts";
 import { Project } from "@/features/projects/Project.tsx";
 
-const data: ProjectInterface[] = [
+const data: ProjectTypes[] = [
   {
     id: 1,
     title: "Personal Portfolio",

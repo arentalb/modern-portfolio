@@ -1,4 +1,4 @@
-export interface TechnologyInterface {
+export interface TTechnology {
   id?: number;
   name: string;
   imgURL?: string;

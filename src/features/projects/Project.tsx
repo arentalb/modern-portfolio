@@ -1,8 +1,8 @@
 import { LevelList } from "@/features/projects/LevelList.tsx";
 import { Link } from "react-router-dom";
-import { ProjectInterface } from "@/types/ProjectInterface.ts";
+import { ProjectTypes } from "@/types/Project.types.ts";
 
-export function Project({ project }: { project: ProjectInterface }) {
+export function Project({ project }: { project: ProjectTypes }) {
   return (
     <div className="mb-8 rounded-md">
       <img src={project.imageURL} alt="" className={"mb-6"} />

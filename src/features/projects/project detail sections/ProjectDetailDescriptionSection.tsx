@@ -1,10 +1,10 @@
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
-import { ProjectInterface } from "@/types/ProjectInterface.ts";
+import { ProjectTypes } from "@/types/Project.types.ts";
 
 export function ProjectDetailDescriptionSection({
   project,
 }: {
-  project: ProjectInterface;
+  project: ProjectTypes;
 }) {
   return (
     <RevealCenter>
