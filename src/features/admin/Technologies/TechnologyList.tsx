@@ -1,55 +1,49 @@
 import { useGetTechnologies } from "@/features/admin/Technologies/useGetTechnologies.ts";
 import { Loading } from "@/components/Loading.tsx";
-import { TechnologyForm } from "@/features/admin/Technologies/TechnelogyForm.tsx";
-import { useState } from "react";
 import { TTechnology } from "@/types/Technology.types.ts";
 
-export function TechnologyList() {
+export function TechnologyList({
+  onSelect,
+}: {
+  onSelect: (selectedTech: TTechnology | undefined) => void;
+}) {
   const { technologies, isLoading } = useGetTechnologies();
-  const [technologySelected, setTechnologySelected] = useState<TTechnology>();
   return (
-    <div>
-      <div className={"flex flex-wrap gap-10 pt-20"}>
-        {isLoading && <Loading />}
-        {technologies && (
-          <>
-            {technologies.map((skill) => (
-              <Skill
-                skill={skill}
-                key={skill.id}
-                select={setTechnologySelected}
-              />
-            ))}
-          </>
-        )}
-      </div>
-      {technologySelected && (
-        <TechnologyForm mode={"edit"} technology={technologySelected} />
+    <div className={"flex flex-wrap gap-10 pt-20"}>
+      {isLoading && <Loading />}
+      {technologies && (
+        <>
+          {technologies.map((tech) => (
+            <Technology tech={tech} key={tech.id} onSelect={onSelect} />
+          ))}
+        </>
       )}
     </div>
   );
 }
 
-function Skill({
-  skill,
-  select,
+function Technology({
+  tech,
+  onSelect,
 }: {
-  skill: TTechnology;
-  select: (skill: TTechnology) => void;
+  tech: TTechnology;
+  onSelect: (tech: TTechnology) => void;
 }) {
   return (
-    <div
-      onClick={() => select(skill)}
-      className={
-        " flex h-28 w-28 flex-col items-center justify-center rounded-3xl  border-2 border-white p-4"
-      }
-    >
-      <img
-        src={skill.imgURL}
-        alt=""
-        className={" relative  mb-2  w-12 object-cover object-top"}
-      />
-      <span>{skill.name}</span>
+    <div className={"flex flex-col items-center justify-center gap-4 "}>
+      <div
+        onClick={() => onSelect(tech)}
+        className={" rounded-3xl border-2 border-white p-4"}
+      >
+        <img
+          src={tech.imgURL}
+          alt=""
+          className={
+            "w-12 object-cover object-top  transition duration-500 hover:scale-105 md:w-16"
+          }
+        />
+      </div>
+      <span>{tech.name}</span>
     </div>
   );
 }

@@ -50,9 +50,6 @@ export async function updateTechnologyAPI(
   id: string | number,
   technology: TTechnology,
 ) {
-  console.log("updateTechnologyAPI");
-  console.log(technology);
-
   let updateObject = { ...technology };
   let generatedImageName = null;
 
@@ -63,13 +60,8 @@ export async function updateTechnologyAPI(
     generatedImageName = imageName;
   }
 
-  const { data, error }: PostgrestResponse<TTechnology> = await supabase
-    .from("Technology")
-    .update(updateObject)
-    .eq("id", id)
-    .select();
-  console.log(data);
-  console.log(error);
+  await supabase.from("Technology").update(updateObject).eq("id", id).select();
+
   if (!technology.image || technology.image.length === 0) {
     return;
   }
@@ -80,15 +72,22 @@ export async function updateTechnologyAPI(
 
     if (storageError) {
       console.log(storageError);
-      // await deleteTechnologyAPI(id);
+      await deleteTechnologyAPI(Number(id));
     }
-    console.log("not error");
   }
 }
 
-export async function deleteTechnologyAPI(id: number) {
+export async function deleteTechnologyAPI(id: number, imgURL?: string) {
   const { error } = await supabase.from("Technology").delete().eq("id", id);
   console.log(error);
+  if (imgURL) {
+    await deleteImage(imgURL);
+  }
+}
+
+async function deleteImage(imgURL: string) {
+  // i only have imageUrl and that parameter must be image name only not the full path
+  await supabase.storage.from("Technology").remove([imgURL]);
 }
 
 function generateImageNameAndPath(name: string) {

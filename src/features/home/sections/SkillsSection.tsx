@@ -2,36 +2,9 @@ import { AnimatedSkills } from "@/components/aceternity/AnimatedSkills.tsx";
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { useGetTechnologies } from "@/features/admin/Technologies/useGetTechnologies.ts";
 import { Loading } from "@/components/Loading.tsx";
-import { Error } from "@/components/Error.tsx";
-
-interface SkillProps {
-  id: number;
-  name: string;
-  imgURL: string;
-}
-
-const skillsData: SkillProps[] = [
-  { id: 1, name: "Java", imgURL: "/skills/Java.svg" },
-  { id: 2, name: "Javascript", imgURL: "/skills/Javascript.svg" },
-  { id: 3, name: "React", imgURL: "/skills/React.svg" },
-  { id: 4, name: "Angular", imgURL: "/skills/Angular.svg" },
-  { id: 5, name: "RxJs", imgURL: "/skills/RxJs.svg" },
-  { id: 6, name: "Redux", imgURL: "/skills/Redux.svg" },
-  { id: 7, name: "Git", imgURL: "/skills/Git.svg" },
-  { id: 8, name: "Github", imgURL: "/skills/Github.svg" },
-  { id: 9, name: "HTML", imgURL: "/skills/HTML.svg" },
-  { id: 10, name: "CSS", imgURL: "/skills/CSS.svg" },
-  { id: 11, name: "Tailwind", imgURL: "/skills/Tailwind.svg" },
-  { id: 12, name: "Firebase", imgURL: "/skills/Firebase.svg" },
-  { id: 13, name: "Supabase", imgURL: "/skills/Supabase.svg" },
-  { id: 14, name: "Postgresql", imgURL: "/skills/Postgresql.svg" },
-  { id: 15, name: "MySql", imgURL: "/skills/MySql.svg" },
-];
 
 export function SkillsSection() {
-  const { technologies, isLoading, error } = useGetTechnologies();
-
-  console.log(technologies);
+  const { technologies, isLoading } = useGetTechnologies();
   return (
     <RevealCenter delay={0.3}>
       <section className="mx-auto max-w-[1400px] px-5 py-32  text-center  ">
@@ -49,10 +22,9 @@ export function SkillsSection() {
           <div className={"flex justify-center"}>
             <div className="flex flex-wrap justify-center gap-8  md:gap-16">
               {isLoading && <Loading />}
-              {error && <Error message={error} />}
               {technologies && (
                 <AnimatedSkills
-                  items={technologies?.filter((item) => item.isSkill)}
+                  items={technologies.filter((item) => item.isSkill)}
                 />
               )}
             </div>

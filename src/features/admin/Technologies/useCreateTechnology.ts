@@ -5,7 +5,7 @@ import { TTechnology } from "@/types/Technology.types.ts";
 export function useCreateTechnology() {
   const queryClient = useQueryClient();
 
-  const { mutate: createTechnology, isLoading: isCreating } = useMutation({
+  const { mutateAsync: createTechnology, isLoading: isCreating } = useMutation({
     mutationFn: (data: TTechnology) => createTechnologyAPI(data),
     onSuccess: () => {
       queryClient.invalidateQueries({

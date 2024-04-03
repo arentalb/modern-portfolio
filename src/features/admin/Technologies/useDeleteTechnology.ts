@@ -4,8 +4,9 @@ import { deleteTechnologyAPI } from "@/services/apiTechnologies.ts";
 export function useDeleteTechnology() {
   const queryClient = useQueryClient();
 
-  const { mutate: deleteTechnology, isLoading: isDeleting } = useMutation({
-    mutationFn: (id: number) => deleteTechnologyAPI(id),
+  const { mutateAsync: deleteTechnology, isLoading: isDeleting } = useMutation({
+    mutationFn: ({ id, imgURL }: { id: number; imgURL: string }) =>
+      deleteTechnologyAPI(id, imgURL),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["technologies"],

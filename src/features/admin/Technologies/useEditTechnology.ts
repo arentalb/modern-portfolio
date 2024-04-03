@@ -5,7 +5,7 @@ import { TTechnology } from "@/types/Technology.types.ts";
 export function useEditTechnology() {
   const queryClient = useQueryClient();
 
-  const { mutate: editTechnology, isLoading: isEditing } = useMutation({
+  const { mutateAsync: editTechnology, isLoading: isEditing } = useMutation({
     mutationFn: ({ id, data }: { id: number; data: TTechnology }) =>
       updateTechnologyAPI(id, data),
     onSuccess: () => {

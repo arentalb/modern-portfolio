@@ -4,4 +4,5 @@ export interface TTechnology {
   imgURL?: string;
   image?: FileList;
   isSkill: boolean;
+  created_at?: Date;
 }
