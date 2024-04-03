@@ -82,7 +82,9 @@ function TerminalProvider({ children }: { children: ReactNode }) {
       case "show":
         if (commandParts.length === 2) {
           if (commandParts[1] === "routes") {
-            terminalLog(`\n/\narticle\ncertificates\n`);
+            terminalLog(
+              `\n/\nprojects\nexperience\narticle\ncertificates\nlogin\n`,
+            );
           } else {
             terminalLog(`\nInvalid show command\n`);
           }
@@ -95,8 +97,11 @@ function TerminalProvider({ children }: { children: ReactNode }) {
         if (commandParts.length === 2) {
           if (
             commandParts[1] === "/" ||
+            commandParts[1] === "projects" ||
+            commandParts[1] === "experience" ||
             commandParts[1] === "article" ||
-            commandParts[1] === "certificates"
+            commandParts[1] === "certificates" ||
+            commandParts[1] === "login"
           ) {
             navigate(commandParts[1]);
             terminalLog(`\n`);
