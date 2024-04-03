@@ -1,17 +1,17 @@
 import { Outlet } from "react-router";
-import { AdminSideMenu } from "@/features/admin/AdminSideMenu.tsx";
+import { Header } from "@/components/Header.tsx";
+import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 
 export function AdminPage() {
   return (
-    <div className={"flex h-screen"}>
-      <aside className="w-[300px] flex-shrink-0 border-r-2 border-r-white p-10">
-        <AdminSideMenu />
-      </aside>
-      <main className="flex-1 overflow-scroll p-10">
-        <div>
+    <>
+      <Header />
+      {/* becuse the header is in somewhere that only the outlet is re renders so when we navigate between two pages that is inside a route it will not hide by it self */}
+      <RevealCenter>
+        <section className="mx-auto flex max-w-[1400px] flex-col items-center justify-between  gap-20 px-5  pb-32 pt-16 sm:flex-row  ">
           <Outlet />
-        </div>
-      </main>
-    </div>
+        </section>
+      </RevealCenter>
+    </>
   );
 }

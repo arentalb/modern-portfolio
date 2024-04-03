@@ -92,7 +92,7 @@ export function TechnologyForm({
   }
 
   return (
-    <form className={"flex items-start gap-4 py-10"}>
+    <form className={"flex flex-col items-start gap-4 py-10 xl:flex-row"}>
       <div className="flex w-[300px] flex-col justify-center gap-2 ">
         <Label htmlFor="name">Name</Label>
         <Input
@@ -126,46 +126,48 @@ export function TechnologyForm({
         )}
       </div>
 
-      <div className="flex  flex-col justify-center  ">
-        <Label htmlFor="skill" className={"mb-4"}>
-          Skill
-        </Label>
-        <label
-          htmlFor={mode}
-          className="me-5 inline-flex cursor-pointer items-center"
-        >
-          <input
-            id={mode}
-            type="checkbox"
-            className="peer sr-only"
-            {...register("isSkill")}
-          />
-          <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-green-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-2  dark:border-gray-600 dark:bg-gray-700  rtl:peer-checked:after:-translate-x-full"></div>
-        </label>
-      </div>
-      <div className={"mt-5 space-x-2"}>
-        {/*{image && <img src={URL.createObjectURL(image)} alt="Selected" />}{" "}*/}
-        {/* Render the selected image if it exists */}
-        {mode === "edit" ? (
-          <>
-            <Button
-              onClick={handleSubmit(editHandler)}
-              disabled={isEditing || isDeleting}
-            >
-              edit
+      <div className={"flex "}>
+        <div className="flex  flex-col justify-center  ">
+          <Label htmlFor="skill" className={"mb-4"}>
+            Skill
+          </Label>
+          <label
+            htmlFor={mode}
+            className="me-5 inline-flex cursor-pointer items-center"
+          >
+            <input
+              id={mode}
+              type="checkbox"
+              className="peer sr-only"
+              {...register("isSkill")}
+            />
+            <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-green-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-2  dark:border-gray-600 dark:bg-gray-700  rtl:peer-checked:after:-translate-x-full"></div>
+          </label>
+        </div>
+        <div className={"mt-5 space-x-2"}>
+          {/*{image && <img src={URL.createObjectURL(image)} alt="Selected" />}{" "}*/}
+          {/* Render the selected image if it exists */}
+          {mode === "edit" ? (
+            <>
+              <Button
+                onClick={handleSubmit(editHandler)}
+                disabled={isEditing || isDeleting}
+              >
+                edit
+              </Button>
+              <Button
+                onClick={handleSubmit(deleteHandler)}
+                disabled={isDeleting || isEditing}
+              >
+                delete
+              </Button>
+            </>
+          ) : (
+            <Button onClick={handleSubmit(createHandler)} disabled={isCreating}>
+              save
             </Button>
-            <Button
-              onClick={handleSubmit(deleteHandler)}
-              disabled={isDeleting || isEditing}
-            >
-              delete
-            </Button>
-          </>
-        ) : (
-          <Button onClick={handleSubmit(createHandler)} disabled={isCreating}>
-            save
-          </Button>
-        )}
+          )}
+        </div>
       </div>
     </form>
   );

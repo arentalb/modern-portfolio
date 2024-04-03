@@ -8,7 +8,7 @@ export function TechnologiesAdminPage() {
 
   return (
     <div>
-      <h1 className={"text-4xl"}>Technologies</h1>
+      <h1 className={"text-4xl font-bold"}>Technologies</h1>
       <div className={"mt-16 "}>
         <TechnologyForm mode={"normal"} />
         <TechnologyList onSelect={setSelectedTech} />

@@ -2,6 +2,7 @@ import { NavLink, To } from "react-router-dom";
 import { ReactNode, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useScrollBlocker } from "@/hooks/useScrollBlocker.tsx";
+import { useAuth } from "@/context/AuthContext.tsx";
 
 interface NavItemProps {
   to: To;
@@ -49,7 +50,7 @@ export function Header() {
       <AnimatePresence>
         {menu ? (
           <motion.nav
-            className={`fixed z-[100] flex h-screen w-screen flex-col items-center justify-between bg-black pt-32 text-2xl font-bold sm:hidden`}
+            className={`fixed left-0 z-[100] flex h-screen w-screen flex-col items-center justify-between  bg-black pt-32 text-2xl font-bold sm:hidden`}
             initial={{ opacity: 0, x: "-100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "-100%" }}
@@ -73,6 +74,7 @@ export function Header() {
 }
 
 function NavItems() {
+  const { isAuthenticated } = useAuth();
   return (
     <>
       <NavItem to="/projects">Projects</NavItem>
@@ -81,7 +83,12 @@ function NavItems() {
       {/*<NavItem to="/tutorial">Tutorial</NavItem>*/}
       {/*<NavItem to="/course">Course</NavItem>*/}
       <NavItem to="/certificates">Certificates</NavItem>
-
+      {isAuthenticated && (
+        <>
+          <NavItem to="/admin/technologies">Technologies</NavItem>
+          <NavItem to="/admin/settings">Settings</NavItem>
+        </>
+      )}
       {/*<TerminalIcon />*/}
     </>
   );
