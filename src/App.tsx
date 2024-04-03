@@ -14,6 +14,8 @@ import { TechnologiesAdminPage } from "@/pages/admin/AdminTechnologiesPage.tsx";
 import { AdminSettingPage } from "@/pages/admin/AdminSettingPage.tsx";
 
 import { QueryClient, QueryClientProvider } from "react-query";
+import { AuthProvider } from "@/context/AuthContext.tsx";
+import { ProtectedRoute } from "@/features/auth/ProtectedRoute.tsx";
 
 function App() {
   const queryClient = new QueryClient({
@@ -25,31 +27,50 @@ function App() {
   });
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <TerminalProvider>
-          <Routes>
-            {/*<Route path={""} element={<HomePage />} />*/}
-            <Route path={""} element={<HomePage />} />
-            <Route path={"/projects"} element={<ProjectsPage />} />
-            <Route path={"/project/:id"} element={<ProjectDetailPage />} />
-            <Route path={"/experience"} element={<ExperiencePage />} />
-            <Route path={"/article"} element={<ArticlePage />} />
-            {/*<Route path={"/tutorial"} element={<TutorialPage />} />*/}
-            {/*<Route path={"/course"} element={<CoursePage />} />*/}
-            <Route path={"/certificates"} element={<CertificatePage />} />
-            <Route path={"/login"} element={<LoginPage />} />
-            <Route
-              path="/admin"
-              element={<Navigate to="/admin/technologies" />}
-            />
-            <Route path="/admin" element={<AdminPage />}>
-              <Route path="technologies" element={<TechnologiesAdminPage />} />
-              <Route path="settings" element={<AdminSettingPage />} />
-            </Route>
-            <Route path={"*"} element={<NotFoundPage />} />
-          </Routes>
-        </TerminalProvider>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <TerminalProvider>
+            <Routes>
+              {/*<Route path={""} element={<HomePage />} />*/}
+              <Route path={""} element={<HomePage />} />
+              <Route path={"/projects"} element={<ProjectsPage />} />
+              <Route path={"/project/:id"} element={<ProjectDetailPage />} />
+              <Route path={"/experience"} element={<ExperiencePage />} />
+              <Route path={"/article"} element={<ArticlePage />} />
+              {/*<Route path={"/tutorial"} element={<TutorialPage />} />*/}
+              {/*<Route path={"/course"} element={<CoursePage />} />*/}
+              <Route path={"/certificates"} element={<CertificatePage />} />
+              <Route path={"/login"} element={<LoginPage />} />
+
+              <Route
+                path="/admin"
+                element={<Navigate to="/admin/technologies" />}
+              />
+
+              <Route path="/admin" element={<AdminPage />}>
+                <Route
+                  path="technologies"
+                  element={
+                    <ProtectedRoute requiredRoles={["admin"]}>
+                      <TechnologiesAdminPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="settings"
+                  element={
+                    <ProtectedRoute requiredRoles={["admin"]}>
+                      <AdminSettingPage />
+                    </ProtectedRoute>
+                  }
+                />
+              </Route>
+
+              <Route path={"*"} element={<NotFoundPage />} />
+            </Routes>
+          </TerminalProvider>
+        </BrowserRouter>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
