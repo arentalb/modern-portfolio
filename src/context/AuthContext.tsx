@@ -25,6 +25,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
   function logout() {
     sessionStorage.removeItem("user_token");
     sessionStorage.removeItem("user_token_expire");
+    setIsAuthenticated(false);
   }
 
   function checkAuthState() {

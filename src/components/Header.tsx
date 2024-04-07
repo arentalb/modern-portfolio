@@ -3,6 +3,8 @@ import { ReactNode, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useScrollBlocker } from "@/hooks/useScrollBlocker.tsx";
 import { useAuth } from "@/context/AuthContext.tsx";
+import { Button } from "@/components/common/ui/button.tsx";
+import { useNavigate } from "react-router";
 
 interface NavItemProps {
   to: To;
@@ -74,19 +76,32 @@ export function Header() {
 }
 
 function NavItems() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
   return (
     <>
-      <NavItem to="/projects">Projects</NavItem>
-      <NavItem to="/experience">Experience</NavItem>
-      <NavItem to="/article">Article</NavItem>
-      {/*<NavItem to="/tutorial">Tutorial</NavItem>*/}
-      {/*<NavItem to="/course">Course</NavItem>*/}
-      <NavItem to="/certificates">Certificates</NavItem>
-      {isAuthenticated && (
+      {!isAuthenticated ? (
+        <>
+          <NavItem to="/projects">Projects</NavItem>
+          <NavItem to="/experience">Experience</NavItem>
+          <NavItem to="/article">Article</NavItem>
+          {/*<NavItem to="/tutorial">Tutorial</NavItem>*/}
+          {/*<NavItem to="/course">Course</NavItem>*/}
+          <NavItem to="/certificates">Certificates</NavItem>
+        </>
+      ) : (
         <>
           <NavItem to="/admin/technologies">Technologies</NavItem>
+          <NavItem to="/admin/projects">Projects</NavItem>
           <NavItem to="/admin/settings">Settings</NavItem>
+          <Button
+            onClick={() => {
+              logout();
+              navigate("/");
+            }}
+          >
+            logOut
+          </Button>
         </>
       )}
       {/*<TerminalIcon />*/}

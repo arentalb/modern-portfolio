@@ -16,6 +16,7 @@ import { AdminSettingPage } from "@/pages/admin/AdminSettingPage.tsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { AuthProvider } from "@/context/AuthContext.tsx";
 import { ProtectedRoute } from "@/features/auth/ProtectedRoute.tsx";
+import { AdminProjectsPage } from "@/pages/admin/AdminProjectsPage.tsx";
 
 function App() {
   const queryClient = new QueryClient({
@@ -53,6 +54,14 @@ function App() {
                   element={
                     <ProtectedRoute requiredRoles={["admin"]}>
                       <TechnologiesAdminPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="projects"
+                  element={
+                    <ProtectedRoute requiredRoles={["admin"]}>
+                      <AdminProjectsPage />
                     </ProtectedRoute>
                   }
                 />
