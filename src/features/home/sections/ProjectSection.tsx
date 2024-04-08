@@ -54,9 +54,9 @@ export function ProjectSection() {
             Dive into the diverse range of projects that showcase my skills and
             passion for innovation.
           </p>
-          <Button className={"mb-24"}>
-            <Link to={"/projects"}>View All Projects</Link>
-          </Button>
+          <Link to={"/projects"}>
+            <Button className={"mb-24"}>View All Projects</Button>
+          </Link>
         </div>
         <MovingCards items={projectData} direction="right" speed="slow" />
       </section>
