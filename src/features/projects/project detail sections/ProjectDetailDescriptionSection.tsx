@@ -1,10 +1,10 @@
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
-import { ProjectTypes } from "@/types/Project.types.ts";
+import { TProject } from "@/types/Project.types.ts";
 
 export function ProjectDetailDescriptionSection({
   project,
 }: {
-  project: ProjectTypes;
+  project: TProject;
 }) {
   return (
     <RevealCenter>
@@ -16,7 +16,7 @@ export function ProjectDetailDescriptionSection({
               "w-full text-sm  text-gray-primary sm:max-w-[70%] md:text-base"
             }
           >
-            {project.longDescription}
+            {project.detail}
           </p>
         </div>
       </section>

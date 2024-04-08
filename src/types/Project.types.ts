@@ -11,5 +11,5 @@ export interface TProject {
   thumbnailName: string;
   thumbnailURL: string;
   repository: string[];
-  technologies: TTechnology[];
+  Technology: TTechnology[];
 }

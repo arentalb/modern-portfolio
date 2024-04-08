@@ -1,47 +1,54 @@
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
+import { TProject } from "@/types/Project.types.ts";
+import { TTechnology } from "@/types/Technology.types.ts";
 import { Link } from "react-router-dom";
-import { ProjectTypes, TStack } from "@/types/Project.types.ts";
 
-export function ProjectsDetailsSection({ project }: { project: ProjectTypes }) {
+export function ProjectsDetailsSection({ project }: { project: TProject }) {
   return (
     <RevealCenter>
       <section className="mx-auto max-w-[1400px] px-5 py-20 sm:px-5 sm:py-32">
-        <div className={"flex flex-col justify-between gap-20 font-bold"}>
-          <Detail items={project.technologies} title={"Main Stack"} />
-          <Detail items={project.libraries} title={"Libraries"} />
-          <Detail items={project.repository} title={"Repositories"} />
+        <div className={"mb-20"}>
+          <h1 className={"mb-8 text-3xl  font-bold md:text-4xl"}>Tech Stack</h1>
+          <div className={"flex flex-wrap gap-10 font-bold md:gap-20"}>
+            {project.Technology.map((tech) => (
+              <Tech tech={tech} key={tech.id} />
+            ))}
+          </div>
+        </div>
+        <h1 className={"mb-8 text-3xl  font-bold md:text-4xl"}>Repositories</h1>
+        <div className={"flex flex-wrap gap-10 font-bold md:gap-20"}>
+          {project.repository.map((repo) => (
+            <div
+              key={repo}
+              className={
+                "flex min-w-40 items-center justify-between rounded-full bg-white px-6 py-2 text-black sm:min-w-48"
+              }
+            >
+              Main Repo
+              <Link to={repo}>
+                <img src="/icons/link.svg" alt="" className={"w-5"} />
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
     </RevealCenter>
   );
 }
 
-export function Detail({ items, title }: { items: TStack[]; title: string }) {
+function Tech({ tech }: { tech: TTechnology }) {
   return (
-    <RevealCenter>
-      <div className={"flex flex-col justify-between font-bold"}>
-        <h1 className={"mb-8 text-3xl  md:text-4xl "}>{title}</h1>
-        <div className={"flex flex-wrap gap-8"}>
-          {items.map((item) => (
-            <Label item={item} />
-          ))}
-        </div>
+    <div className={"flex flex-col items-center justify-center gap-4 "}>
+      <div className={" rounded-3xl border-2 border-white p-4"}>
+        <img
+          src={tech.imgURL}
+          alt={tech.name}
+          className={
+            "w-12 object-cover object-top  transition duration-500 hover:scale-105 md:w-16"
+          }
+        />
       </div>
-    </RevealCenter>
-  );
-}
-
-function Label({ item }: { item: TStack }) {
-  return (
-    <div
-      className={
-        "flex min-w-40 items-center justify-between rounded-full bg-white px-6 py-2 text-black sm:min-w-48"
-      }
-    >
-      {item.name}
-      <Link to={item.link}>
-        <img src="/icons/link.svg" alt="" className={"w-5"} />
-      </Link>
+      <span>{tech.name}</span>
     </div>
   );
 }

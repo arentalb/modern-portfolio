@@ -2,13 +2,9 @@ import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { Button } from "@/components/common/ui/button.tsx";
 import { LevelList } from "@/features/projects/LevelList.tsx";
 import { Link } from "react-router-dom";
-import { ProjectTypes } from "@/types/Project.types.ts";
+import { TProject } from "@/types/Project.types.ts";
 
-export function ProjectDetailHeroSection({
-  project,
-}: {
-  project: ProjectTypes;
-}) {
+export function ProjectDetailHeroSection({ project }: { project: TProject }) {
   return (
     <RevealCenter>
       <section className="mx-auto max-w-[1400px] px-5 py-20 sm:px-5 sm:py-32">
@@ -25,7 +21,7 @@ export function ProjectDetailHeroSection({
               </p>
             </div>
             <div className={" flex items-center justify-between "}>
-              <Link to={project.liveLink}>
+              <Link to={project.liveURL}>
                 <Button className={"w-32 font-bold"}>Go Live</Button>
               </Link>
               <LevelList level={project.level} />
@@ -33,7 +29,7 @@ export function ProjectDetailHeroSection({
           </div>
 
           <img
-            src={project.imageURL}
+            src={project.thumbnailURL}
             alt=""
             className={"mb-12 w-full  sm:mb-0 sm:w-[500px] md:w-[600px]"}
           />
