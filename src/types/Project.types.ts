@@ -1,18 +1,15 @@
-export interface TStack {
-  name: string;
-  link: string;
-}
+import { TTechnology } from "@/types/Technology.types.ts";
 
-export interface ProjectTypes {
+export interface TProject {
   id: number;
+  created_at: string;
   title: string;
   description: string;
-  longDescription: string;
+  detail: string;
   level: "Beginner" | "Intermediate" | "Advanced";
-  link: string;
-  imageURL: string;
-  technologies: TStack[]; // Array of Technology objects
-  libraries: TStack[]; // Optional array of Technology objects
-  repository: TStack[]; // Array of Repository objects
-  liveLink: string;
+  liveURL: string;
+  thumbnailName: string;
+  thumbnailURL: string;
+  repository: string[];
+  technologies: TTechnology[];
 }
