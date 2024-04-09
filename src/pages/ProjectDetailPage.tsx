@@ -13,19 +13,15 @@ export function ProjectDetailPage() {
 
   return (
     <>
-      {isLoading ? <p>loading</p> : ""}
-      {project ? (
-        <>
-          <Header />
-          <ProjectDetailHeroSection project={project} />
-          <BrightLine />
-          <ProjectDetailDescriptionSection project={project} />
-          <ProjectsDetailsSection project={project} />
-          <Footer />
-        </>
-      ) : (
-        ""
-      )}
+      <Header />
+      <ProjectDetailHeroSection project={project} isLoading={isLoading} />
+      <BrightLine />
+      <ProjectDetailDescriptionSection
+        project={project}
+        isLoading={isLoading}
+      />
+      <ProjectsDetailsSection project={project} isLoading={isLoading} />
+      <Footer />
     </>
   );
 }

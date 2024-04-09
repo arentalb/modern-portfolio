@@ -7,7 +7,7 @@ export function Project({ project }: { project: TProject }) {
     <div className="mb-8 rounded-md">
       <img src={project.thumbnailURL} alt="" className={"mb-6"} />
       <h1 className={"mb-2 text-3xl font-bold"}>{project.title}</h1>
-      <p className={"mb-10 w-4/5 text-gray-primary"}>{project.description}</p>
+      <p className={"mb-10  text-gray-primary"}>{project.description}</p>
 
       <div className={"flex items-center justify-between pr-8"}>
         <LevelList level={project.level} />

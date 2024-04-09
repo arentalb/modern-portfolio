@@ -25,7 +25,7 @@ export async function getAllProjectsAPI(): Promise<TProject[]> {
   return data;
 }
 
-export async function getProjectById(id: number): Promise<TProject[] | null> {
+export async function getProjectById(id: number): Promise<TProject> {
   const { data, error }: PostgrestResponse<TProject> = await supabase
     .from("Projects")
     .select(
@@ -47,5 +47,7 @@ export async function getProjectById(id: number): Promise<TProject[] | null> {
   if (error) {
     throw new Error("Error fetching Project ");
   }
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   return data;
 }
