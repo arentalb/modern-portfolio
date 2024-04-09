@@ -1,8 +1,8 @@
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { TProject } from "@/types/Project.types.ts";
-import { TTechnology } from "@/types/Technology.types.ts";
 import { Link } from "react-router-dom";
 import { Loading } from "@/components/Loading.tsx";
+import { TTechnology } from "@/types/Technology.types.ts";
 
 export function ProjectsDetailsSection({
   project,

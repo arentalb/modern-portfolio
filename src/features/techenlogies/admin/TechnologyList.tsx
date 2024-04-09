@@ -1,4 +1,4 @@
-import { useGetTechnologies } from "@/features/admin/Technologies/useGetTechnologies.ts";
+import { useGetTechnologies } from "@/features/techenlogies/admin/useGetTechnologies.ts";
 import { Loading } from "@/components/Loading.tsx";
 import { TTechnology } from "@/types/Technology.types.ts";
 
@@ -14,7 +14,7 @@ export function TechnologyList({
       {technologies && (
         <>
           {technologies.map((tech) => (
-            <Technology tech={tech} key={tech.id} onSelect={onSelect} />
+            <Tech tech={tech} key={tech.id} onSelect={onSelect} />
           ))}
         </>
       )}
@@ -22,7 +22,7 @@ export function TechnologyList({
   );
 }
 
-function Technology({
+function Tech({
   tech,
   onSelect,
 }: {

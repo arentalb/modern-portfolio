@@ -1,10 +1,10 @@
 import { Input } from "@/components/common/ui/input.tsx";
 import { Button } from "@/components/common/ui/button.tsx";
-import { useCreateTechnology } from "@/features/admin/Technologies/useCreateTechnology.ts";
-import { useDeleteTechnology } from "@/features/admin/Technologies/useDeleteTechnology.ts";
+import { useCreateTechnology } from "@/features/techenlogies/admin/useCreateTechnology.ts";
+import { useDeleteTechnology } from "@/features/techenlogies/admin/useDeleteTechnology.ts";
 import { Label } from "@/components/common/ui/label.tsx";
 import { useForm } from "react-hook-form";
-import { useEditTechnology } from "@/features/admin/Technologies/useEditTechnology.ts";
+import { useEditTechnology } from "@/features/techenlogies/admin/useEditTechnology.ts";
 import { useEffect } from "react";
 import { TTechnology } from "@/types/Technology.types.ts";
 

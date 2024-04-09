@@ -1,6 +1,6 @@
 import { AnimatedSkills } from "@/components/aceternity/AnimatedSkills.tsx";
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
-import { useGetTechnologies } from "@/features/admin/Technologies/useGetTechnologies.ts";
+import { useGetTechnologies } from "@/features/techenlogies/admin/useGetTechnologies.ts";
 import { Loading } from "@/components/Loading.tsx";
 
 export function SkillsSection() {

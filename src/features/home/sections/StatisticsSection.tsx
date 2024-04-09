@@ -26,7 +26,7 @@ const StatisticData: StatisticProps[] = [
   },
 
   {
-    StatisticName: "Projects Completed",
+    StatisticName: "admin Completed",
     count: 4,
   },
 ];

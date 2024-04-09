@@ -1,22 +1,22 @@
 import { Navigate, Route, Routes } from "react-router";
-import { NotFoundPage } from "@/pages/NotFoundPage.tsx";
-import { ArticlePage } from "@/pages/ArticlePage.tsx";
-import { HomePage } from "@/pages/HomePage.tsx";
+import { NotFoundPage } from "@/pages/client/NotFoundPage.tsx";
+import { ArticlePage } from "@/pages/client/ArticlePage.tsx";
+import { HomePage } from "@/pages/client/HomePage.tsx";
 import { BrowserRouter } from "react-router-dom";
-import { CertificatePage } from "@/pages/CertificatePage.tsx";
+import { CertificatePage } from "@/pages/client/CertificatePage.tsx";
 import { TerminalProvider } from "@/context/TerminalContext.tsx";
-import { ProjectsPage } from "@/pages/ProjectsPage.tsx";
-import { ExperiencePage } from "@/pages/ExperiencePage.tsx";
-import { ProjectDetailPage } from "@/pages/ProjectDetailPage.tsx";
-import { LoginPage } from "@/pages/LoginPage.tsx";
+import { ProjectsPage } from "@/pages/client/ProjectsPage.tsx";
+import { ExperiencePage } from "@/pages/client/ExperiencePage.tsx";
+import { ProjectDetailPage } from "@/pages/client/ProjectDetailPage.tsx";
+import { LoginPage } from "@/pages/client/LoginPage.tsx";
 import { AdminPage } from "@/pages/admin/AdminPage.tsx";
-import { TechnologiesAdminPage } from "@/pages/admin/AdminTechnologiesPage.tsx";
-import { AdminSettingPage } from "@/pages/admin/AdminSettingPage.tsx";
+import { TechnologiesAdminPage } from "@/pages/admin/subPages/AdminTechnologiesPage.tsx";
+import { AdminSettingPage } from "@/pages/admin/subPages/AdminSettingPage.tsx";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { AuthProvider } from "@/context/AuthContext.tsx";
 import { ProtectedRoute } from "@/features/auth/ProtectedRoute.tsx";
-import { AdminProjectsPage } from "@/pages/admin/AdminProjectsPage.tsx";
+import { AdminProjectsPage } from "@/pages/admin/subPages/AdminProjectsPage.tsx";
 
 function App() {
   const queryClient = new QueryClient({

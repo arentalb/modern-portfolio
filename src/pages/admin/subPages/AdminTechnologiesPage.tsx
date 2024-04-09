@@ -1,5 +1,5 @@
-import { TechnologyForm } from "@/features/admin/Technologies/TechnelogyForm.tsx";
-import { TechnologyList } from "@/features/admin/Technologies/TechnologyList.tsx";
+import { TechnologyForm } from "@/features/techenlogies/admin/TechnelogyForm.tsx";
+import { TechnologyList } from "@/features/techenlogies/admin/TechnologyList.tsx";
 import { useState } from "react";
 import { TTechnology } from "@/types/Technology.types.ts";
 

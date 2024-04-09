@@ -1,11 +1,11 @@
 import { Header } from "@/components/Header.tsx";
 import { Footer } from "@/components/Footer.tsx";
-import { ProjectDetailHeroSection } from "@/features/projects/project detail sections/ProjectDetailHeroSection.tsx";
-import { ProjectDetailDescriptionSection } from "@/features/projects/project detail sections/ProjectDetailDescriptionSection.tsx";
-import { ProjectsDetailsSection } from "@/features/projects/project detail sections/ProjectsDetailsSection.tsx";
+import { ProjectDetailHeroSection } from "@/features/projects/client/projectDetail/ProjectDetailHeroSection.tsx";
+import { ProjectDetailDescriptionSection } from "@/features/projects/client/projectDetail/ProjectDetailDescriptionSection.tsx";
+import { ProjectsDetailsSection } from "@/features/projects/client/projectDetail/ProjectsDetailsSection.tsx";
 import { BrightLine } from "@/components/common/BrightLine.tsx";
 import { useParams } from "react-router";
-import { useGetProjectByID } from "@/features/admin/Projects/useGetProjectByID.ts";
+import { useGetProjectByID } from "@/features/projects/useGetProjectByID.ts";
 
 export function ProjectDetailPage() {
   const params = useParams();

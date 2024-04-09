@@ -1,4 +1,4 @@
-import { useGetProjects } from "@/features/admin/Projects/useGetProjects.ts";
+import { useGetProjects } from "@/features/projects/useGetProjects.ts";
 
 export function AdminProjectsPage() {
   const { projects, isLoading } = useGetProjects();

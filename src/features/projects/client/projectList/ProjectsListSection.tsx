@@ -2,7 +2,7 @@ import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { Input } from "@/components/common/ui/input.tsx";
 import { Button } from "@/components/common/ui/button.tsx";
 import { Project } from "@/features/projects/Project.tsx";
-import { useGetProjects } from "@/features/admin/Projects/useGetProjects.ts";
+import { useGetProjects } from "@/features/projects/useGetProjects.ts";
 
 export function ProjectsListSection() {
   return (
