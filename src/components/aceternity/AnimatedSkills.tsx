@@ -7,9 +7,9 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { TTechnology } from "@/types/Technology.types.ts";
+import { TSkills } from "@/data/skills.ts";
 
-export const AnimatedSkills = ({ items }: { items: TTechnology[] }) => {
+export const AnimatedSkills = ({ items }: { items: TSkills[] }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0); // going to set this value on mouse move
@@ -74,7 +74,7 @@ export const AnimatedSkills = ({ items }: { items: TTechnology[] }) => {
 
           <img
             onMouseMove={handleMouseMove}
-            src={item.imgURL}
+            src={item.url}
             alt={item.name}
             className="relative  w-12  object-cover object-top  transition duration-500   group-hover:z-30 group-hover:scale-105 md:w-16"
           />

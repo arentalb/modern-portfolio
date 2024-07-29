@@ -1,10 +1,10 @@
 import { AnimatedSkills } from "@/components/aceternity/AnimatedSkills.tsx";
 import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
-import { useGetTechnologies } from "@/features/techenlogies/admin/useGetTechnologies.ts";
-import { Loading } from "@/components/Loading.tsx";
+import { Skills } from "@/data/skills.ts";
+
+const skills = Skills;
 
 export function SkillsSection() {
-  const { technologies, isLoading } = useGetTechnologies();
   return (
     <RevealCenter delay={0.3}>
       <section className="mx-auto max-w-[1400px] px-5 py-32  text-center  ">
@@ -21,12 +21,7 @@ export function SkillsSection() {
           </p>
           <div className={"flex justify-center"}>
             <div className="flex flex-wrap justify-center gap-8  md:gap-16">
-              {isLoading && <Loading />}
-              {technologies && (
-                <AnimatedSkills
-                  items={technologies.filter((item) => item.isSkill)}
-                />
-              )}
+              <AnimatedSkills items={skills} />
             </div>
           </div>
         </div>

@@ -1,26 +1,22 @@
 import { Header } from "@/components/Header.tsx";
 import { Footer } from "@/components/Footer.tsx";
 import { ProjectDetailHeroSection } from "@/features/projects/client/projectDetail/ProjectDetailHeroSection.tsx";
-import { ProjectDetailDescriptionSection } from "@/features/projects/client/projectDetail/ProjectDetailDescriptionSection.tsx";
-import { ProjectsDetailsSection } from "@/features/projects/client/projectDetail/ProjectsDetailsSection.tsx";
-import { BrightLine } from "@/components/common/BrightLine.tsx";
 import { useParams } from "react-router";
-import { useGetProjectByID } from "@/features/projects/useGetProjectByID.ts";
+import { Projects } from "@/data/projects.ts";
 
 export function ProjectDetailPage() {
   const params = useParams();
-  const { project, isLoading } = useGetProjectByID(Number(params.id));
+
+  if (params.id === undefined) return;
+
+  const project = Projects.filter((proje) => +proje.id === +params.id)[0];
 
   return (
     <>
       <Header />
-      <ProjectDetailHeroSection project={project} isLoading={isLoading} />
-      <BrightLine />
-      <ProjectDetailDescriptionSection
-        project={project}
-        isLoading={isLoading}
-      />
-      <ProjectsDetailsSection project={project} isLoading={isLoading} />
+      <ProjectDetailHeroSection project={project} />
+      {/*<ProjectDetailDescriptionSection project={project} />*/}
+      {/*<ProjectsDetailsSection project={project} />*/}
       <Footer />
     </>
   );

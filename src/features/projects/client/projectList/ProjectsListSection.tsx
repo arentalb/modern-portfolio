@@ -2,7 +2,7 @@ import { RevealCenter } from "@/components/animations/RevealCenter.tsx";
 import { Input } from "@/components/common/ui/input.tsx";
 import { Button } from "@/components/common/ui/button.tsx";
 import { Project } from "@/features/projects/Project.tsx";
-import { useGetProjects } from "@/features/projects/useGetProjects.ts";
+import { Projects } from "@/data/projects.ts";
 
 export function ProjectsListSection() {
   return (
@@ -38,20 +38,11 @@ function Search() {
 }
 
 function ProjectsList() {
-  const { projects, isLoading } = useGetProjects();
-
   return (
     <div className="grid grid-cols-1 justify-center gap-x-8  gap-y-16 sm:grid-cols-2 md:grid-cols-3  ">
-      {projects ? (
-        <>
-          {projects.map((project) => (
-            <Project key={project.id} project={project} />
-          ))}
-        </>
-      ) : (
-        <p>no project</p>
-      )}
-      {isLoading ? <p>Loading .....</p> : ""}
+      {Projects.map((project) => (
+        <Project key={project.id} project={project} />
+      ))}
     </div>
   );
 }
