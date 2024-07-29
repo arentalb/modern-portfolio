@@ -5,11 +5,18 @@ import { useParams } from "react-router";
 import { Projects } from "@/data/projects.ts";
 
 export function ProjectDetailPage() {
-  const params = useParams();
+  const params = useParams<{ id: string }>();
 
-  if (params.id === undefined) return;
+  if (!params.id) {
+    return <div>Project ID is missing</div>;
+  }
 
-  const project = Projects.filter((proje) => +proje.id === +params.id)[0];
+  const projectId = parseInt(params.id, 10);
+  const project = Projects.find((proje) => proje.id === projectId);
+
+  if (!project) {
+    return <div>Project not found</div>;
+  }
 
   return (
     <>
