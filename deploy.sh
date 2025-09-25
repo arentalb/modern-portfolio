@@ -60,9 +60,9 @@ if pm2 restart modern-portfolio 2>/dev/null; then
     echo "Application restarted successfully"
 else
     echo "Starting new PM2 process..."
-    if ! pm2 start npm --name modern-portfolio -- run start  -- -p 3012; then
-        echo "ERROR: Unable to start PM2 process"
-        exit 1
+    if ! pm2 start npm --name modern-portfolio -- run serve -- -l 3012; then
+                echo "ERROR: Unable to start PM2 process"
+                exit 1
     fi
     if ! pm2 save; then
         echo "WARNING: PM2 save failed - process may not survive server restart"
